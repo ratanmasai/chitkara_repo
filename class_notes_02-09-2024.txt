@@ -1,0 +1,188 @@
+URL:  http://127.0.0.1:5500/success.html?username=Rahul&password=123 
+
+Protocol: http://
+
+Server IP address: 127.0.0.1
+
+port number of the server: 5500
+
+URI(Uniform resource identifier): /success.html
+
+Query String: ?username=Rahul&password=123
+
+Request Parameter1 : username=Rahul
+
+Request Parameter2 : password=123
+
+
+Radio button:
+
+
+ 	    <label>Gender:</label>
+
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+            
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+
+
+Note: To group multiple radio buttons to a single unit, we need to give the same logical name to all the radio buttons.
+and also we need to specify the value attribute to let user choose the value.
+
+
+
+Checkbox: 
+
+
+	    <label>Choose Courses:</label>
+
+            <input type="checkbox" name="courses" id="java" value="Java">
+            <label for="java">Java</label>
+
+            <input type="checkbox" name="courses" id="python" value="Python">
+            <label for="python">Python</label>
+            
+            <input type="checkbox" name="courses" id="react" value="React">
+            <label for="react">React</label>
+            
+            <input type="checkbox" name="courses" id="ai" value="AI">
+            <label for="ai">AI</label>
+
+Note: Here users can select multiple courses, and the selected courses will go to the server as an array..
+
+
+File upload:
+
+ 	    <label for="">Upload a File</label>
+            <input type="file" name="file" id="file" multiple>
+
+
+Note: For the file upload option we should always use method= "post"....
+
+
+
+Drop down box:
+
+ 	    <label for="city">Select City:</label>
+            <select name="city" id="city" required>
+                <option value="">Choose a city</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Chnd">Chandigarh</option>
+                <option value="Shimla">Shimla</option>
+                <option value="Mohali">Mohali</option>
+            </select>
+
+
+
+Example application:
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 align="center">Welcome to Chitkara</h1>
+
+    <form action="success.html">
+
+        <fieldset>
+
+            <legend>Login Information</legend>
+
+            <label for="roll">Roll Number:</label>
+            <input type="text" name="roll" id="roll" value="C-12345" disabled>
+
+            <br><br>
+
+            <label for="username">Enter Username: </label>
+            <input type="text" name="username" id="username" required minlength="3" maxlength="12">
+            <br><br>
+
+            <label for="password">Enter Password: </label>
+            <input type="password" name="password" required placeholder="Enter Password">
+            <br><br>
+
+            <label>Gender:</label>
+
+            <input type="radio" name="gender" id="male" value="male" required>
+            <label for="male">Male</label>
+            
+            <input type="radio" name="gender" id="female" value="female" required>
+            <label for="female">Female</label>
+
+            <br><br>
+
+            <label>Choose Courses:</label>
+
+            <input type="checkbox" name="courses" id="java" value="Java">
+            <label for="java">Java</label>
+
+            <input type="checkbox" name="courses" id="python" value="Python">
+            <label for="python">Python</label>
+            
+            <input type="checkbox" name="courses" id="react" value="React">
+            <label for="react">React</label>
+            
+            <input type="checkbox" name="courses" id="ai" value="AI">
+            <label for="ai">AI</label>
+
+
+            <br><br>
+
+
+            <label for="email">Enter Email:</label>
+            <input type="email" name="email" id="email" required>
+
+            <br><br>
+
+
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" step="5" min="100" max="500">
+
+            <br><br>
+
+            <label for="dob">Date Of Birth</label>
+            <input type="date" name="dob" id="dob" required>
+
+            <br><br>
+            <label for="">Upload a File</label>
+            <input type="file" name="file" id="file" multiple>
+
+            <br><br>
+
+            <label for="city">Select City:</label>
+            <select name="city" id="city" required>
+                <option value="">Choose a city</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Chnd">Chandigarh</option>
+                <option value="Shimla">Shimla</option>
+                <option value="Mohali">Mohali</option>
+            </select>
+
+
+            <br><br>
+
+            <label for="comments">Comments</label>
+            <textarea name="comment" id="comment" required rows="10" cols="20"></textarea>
+
+            <br><br>
+            <input type="submit" value="Login">
+            <input type="reset" value="RESET">
+
+        </fieldset>
+
+    </form>
+
+
+
+</body>
+
+</html>
+
