@@ -1,0 +1,1365 @@
+
+
+//Declaration, Assignment, Reassignment
+
+//Baby is born, Will be named later
+
+var name; //declaration
+name="Raj"; //assignment
+
+// Baby born & named
+
+var name="Simran" //assignment
+
+Name changed later
+
+name= "Preeti" // reassignment
+
+var name="Kiran"; //redeclaration 
+
+
+
+console.log(name);  //
+
+console.log("The name is: ",name);
+
+
+
+
+Assignments:
+============
+
+
+Identify which of the following is valid or invalid variable naming.
+
+
+userName  
+if        
+_totalAmount 
+123price    
+$taxRate    
+@username   
+item123     
+my-variable  
+
+
+
+
+
+
+
+Datatypes in Java-script:
+=========================
+
+
+In JavaScript, there are several built-in data types:
+
+Primitive Data Types:
+---------------------
+
+
+1. String: Textual data, enclosed within single or double quotes.
+Example:
+
+var name1= 'Raj';
+var name2="Simran";
+
+2. Number: Numeric data, including integers and floating-point numbers.
+
+Example:
+
+var age= 22;
+var height = 5.8;
+
+
+3. Boolean: Logical data representing true or false.
+
+Example:
+
+var isPass = true;
+var isMarried = false;
+
+
+
+4. Undefined: Represents a variable that has been declared but not yet assigned a value.
+
+Example:
+
+var address; // address is undefined
+
+
+
+5. Null: Represents the intentional absence of any object value. It is an object type itself, though it represents "nothing."
+
+Example:
+
+var salary = null; // salary is explicitly empty
+
+
+
+
+
+7. BigInt: Introduced in ES10, BigInts are used for working with arbitrarily large integers.
+
+
+
+
+
+Non-primitive Data Type:
+
+1. Object: A collection of key-value pairs, where keys (properties) can point to values (including other objects or functions).
+
+Example:
+
+let person = {
+  name: "John",
+  age: 30
+};
+
+
+
+
+2. Array: A special type of object that represents an ordered list of values, which can be accessed by their index.
+
+Example:
+
+var fruits = ['apple', 'banana', 'cherry'];
+
+
+
+3. Function: A reusable block of code designed to perform a particular task. Functions are also objects in JavaScript.
+
+Example:
+
+function greet() {
+  console.log('Hello!');
+}
+
+
+
+
+primitive:
+----------
+1. String
+2. Number
+3. Boolean
+4. undefined
+5. null
+6. bigInt
+
+Non-primitives: all non-primitive types are implicitly treated as object in JavaScript.
+
+1. object: {}
+2. array: []
+3. function: 
+
+
+Note: Non-primitive types are also called as reference type.
+
+
+
+//primitive - it directly points to value -> by value
+//non-primitve - it points to adress( location ) -> by reference
+​
+
+Example: by value
+
+
+var x = 10;
+
+var y=x;
+
+x=20;
+
+console.log(x);
+
+console.log(y);
+
+
+Example: by reference
+
+
+var arr1 = ["apple", "mango"];
+
+var arr2= arr1;
+
+arr1.push("Banana");
+
+console.log(arr1);
+console.log(arr2);
+
+
+
+
+
+
+
+Checking Data Types of a variable: interrogating the type of a variable in java-script: by using typeof() inbuilt operator.
+=================================
+
+
+var x = 12;
+console.log(typeof(x)); // Output: number
+
+var y = "12";
+console.log(typeof(y)); // Output: string
+
+
+var isMarried = false;
+console.log(typeof(isMarried)); // Output: boolean
+
+
+var age;
+
+console.log(typeof(age)); // Output: undefined
+
+var salary= null;  //imp
+
+console.log(typeof(salary)); // Output: object
+
+
+var fruits = ["apple", "Banana","Mango"];
+
+console.log(typeof(fruits)); // Output: object
+
+
+var emp = {
+
+    id: 101,
+    name: "Ram",
+    address: "Panjab"
+};
+
+console.log(typeof(emp)); // Output: object
+
+
+function greet(){  //imp
+    console.log("Welcome to Chitkara");
+}
+
+console.log(typeof(greet)); // Output: function
+
+
+
+Note: JavaScript is a loosely typed language, meaning you don't have to declare the data type of a variable explicitly, and it can change types dynamically.
+Variables: Best Naming practices
+
+
+Example:
+
+var x= "Hello";
+
+console.log(typeof(x)); //string
+
+x=20;
+
+
+console.log(typeof(x)); //number
+
+x=true;
+
+
+console.log(typeof(x)); //boolean
+
+
+
+
+printing in a descriptive manner: Output
+=================================
+ 
+var age= 30;
+
+option1:
+-------
+console.log("The age is",age);
+
+
+option2:
+--------
+console.log("The age is "+age);
+
+
+option3:
+-------
+
+var message = "The age is "+age;
+console.log(message);
+
+
+option4: using String template (multi-line string)
+--------
+var name= "Raj";
+var message = `The age is ${age}
+and name is ${name}`;
+
+console.log(message);
+
+
+
+Differentiate between ,(coma) and +
+====================================
+
+var a = 2;
+var b = 3;
+var c = "hello";
+
+console.log(a,b,c);  
+console.log(a+b+c);  
+
+var x= a+b+c;
+
+console.log(x); //5hello
+console.log(typeof(x)); //string
+
+
+// Case 2: Integers
+var a = 2;
+var b = 3;
+console.log(a+b);   // 5
+console.log(a,b);   // 2 3
+
+var x= a+b;
+
+console.log(x); //5
+console.log(typeof(x)); //number
+
+
+
+
+// Case 3: Strings
+var a = "Hello";
+var b = "World";
+
+console.log(a+b); // HelloWorld
+
+// Case 4: Integer with Strings
+var a = 2;
+var b = "hello";
+
+console.log(a,b); // 2 hello
+console.log(a+b); // 2hello
+
+// Case 5: "\n"
+var a = 2;
+var b = "hello";
+
+console.log(a,"\n",b);
+
+
+
+
+
+
+
+
+Operators in JavaScript:
+========================
+
+1. Arithmetic Operators:
+------------------------
+
+Addition: +
+Subtraction: -
+Multiplication: *
+Division: /
+Modulus (Remainder): %
+Increment: ++
+Decrement: --
+exponent: **
+
+2. Assignment Operators:
+------------------------
+
+Assign: =
+Addition assignment: +=
+Subtraction assignment: -=
+Multiplication assignment: *=
+Division assignment: /=
+Modulus assignment: %=
+
+3. Relational Operators:
+------------------------
+
+
+Equal to: == or ===
+Not equal to: != or !==
+Greater than: >
+Greater than or equal to: >=
+Less than: <
+Less than or equal to: <=
+
+4. Logical Operators:
+---------------------
+
+Logical AND: &&
+Logical OR: ||
+Logical NOT: !
+
+5.Conditional (Ternary) Operator:
+---------------------------------
+
+condition ? expression1 : expression2
+
+
+
+
+
+
+
+Note: + operator will also works for string concatenation.(if any one operand is string then it will do the concatenation)
+
+
+example1:
+
+var x= 10;
+var y = 20;
+
+console.log(x+y); //10
+
+example2:
+
+var x= 10;
+var y = "masai";
+
+console.log(x+y); //10masai
+
+example3:
+
+var x= 10;
+var y = "10";
+
+var z= x+y;
+
+console.log(z); //1010
+console.log(typeof(z)); //string
+
+
+
+example4:
+
+console.log(10+10+"masai"); 
+
+console.log("masai"+10+10); 
+
+console.log("masai"+(10+10)); 
+
+
+
+Extra tips: using the + operator
+===========
+
+
+String + Anything: Results in string concatenation.
+Number + Boolean: Coerces booleans to numbers, then performs numeric addition.
+Null + Number: Coerces null to 0 and performs numeric addition.
+Undefined + Number: Results in NaN (Not a Number).
+Array + Array: Result in String(both array will be joined as a string)
+Object + Object: Result in String (objects are converted to "[object Object]") 
+
+
+
+
+
+
+
+Arithmetic operator precedence:
+===============================
+
+
+
+
+
+1. ()
+
+2. ** exponent
+
+3. * / % same precedence.. left to right
+
+4. + - same precedence.. left to right
+
+
+example:
+
+
+var x = 3 + 2 - 1 * 3**2 /2;
+
+
+console.log(x); 
+
+
+
+Amazon shopping cart example:
+----------------------------- 
+
+
+var quantityOfEarPhone= 2;
+var priceOfEarPhone= 1599;
+
+var quantityOfBook=4;
+var priceOfBook = 449;
+
+var quantityOfPhone= 2;
+var priceOfPhone = 17000;
+
+var totalPrice = (quantityOfEarPhone * priceOfEarPhone) + (quantityOfBook * priceOfBook ) + (quantityOfPhone * priceOfPhone);
+
+console.log("Total Price is :", totalPrice);
+
+
+
+% reminder operator:
+
+50 % 7 = 1
+
+7 % 50 = 7
+
+
+
+
+exponent operator: **
+
+ 2
+3     3*3 = 3**2 = 9
+
+ 4 
+5    5*5*5*5 = 5**4 = 625
+
+--using this exponent operator we can find out the square root also:
+
+ _    1/2     0.5 
+|4   4     = 4       4**0.5
+
+
+
+--applying brackets for long expressions
+
+use "\n" break line: 
+
+example:
+
+var city = "Chandigarh";
+var state = "Punjab";
+var country = "India";
+
+console.log("City is: "+city+"\nstate is: "+state+"\ncountry is: "+country); 
+
+//or using backtick
+
+console.log(
+`City is: ${city}
+State is: ${state}
+Country is: ${country}`
+);
+
+
+
+
+--boolean type:
+
+var x="true"; 
+
+var y= true;
+
+
+console.log(typeof(x)); //string
+
+console.log(typeof(y)); //boolean
+
+
+memory management and interpreter:
+
+var a=2;
+var b=4;
+var c= a+b;
+console.log(c);
+
+var d = c;
+d= d+ a+b;
+console.log(d);
+
+
+
+Assignment Operators:
+------------------------
+
+Assign: =
+Addition assignment: +=
+
+example1:
+
+var x;
+x=20;
+
+console.log(x); //20
+
+
+example2:
+
+var x = 20;
+
+x+=30;
+
+console.log(x); //50
+
+
+
+3. Relational Operators:
+------------------------
+--these are applied to any types of values/variables and the result will always be in the form of Boolean.
+
+==
+
+true: if first value is equal to second value
+false: if the first value is not equal to second value
+
+
+Equal to: == or ===(strict equal to)
+Not equal to: != or !==(string not equal to)
+
+
+Greater than: >
+Greater than or equal to: >=
+Less than: <
+Less than or equal to: <=
+
+example:
+
+console.log("dinesh" == "dinesh"); 
+console.log(2 == 2); 
+console.log("2" == "2");  
+console.log("dinesh" == "Dinesh");  
+
+!= (it is the opposite of ==)
+
+true: when value is not equal
+false: when the value is equal
+
+console.log("dinesh" != "dinesh"); 
+console.log(2 != 2); 
+console.log("2" != "2");  
+console.log("dinesh" != "Dinesh"); 
+
+=== //strict equal to
+
+2 == "2" true 
+2 === "2" false
+
+== compare the value not the datatype
+=== compare the value + datatype
+
+!== opposit of ===
+
+!= consider the value
+!== consider the value and the datatype
+
+example:
+
+
+var masai = 5;
+var a = "masai";
+var b = masai;
+
+console.log(a == b); 
+console.log(a != b); 
+console.log(a === b); 
+console.log(a !== b); 
+
+
+
+
+> gt (first value is strictly gt second value) and false: if the second value is less than or equal to first value
+< lt
+>= gte
+<= lte
+
+
+
+console.log(5 > 4) true
+
+example:
+
+console.log(15 > 14) true
+console.log(15 > 15) false
+console.log(15 > 16) false
+
+var ageOfRam= 20;
+var ageOfShyam = 30;
+
+console.log(ageOfRam > ageOfShyam); // kya ram bara hain? false
+console.log(ageOfRam < ageOfShyam); // kya ram chota hain? true
+
+example2: 
+
+var ramMarks= 36;
+var passingMarks = 35;
+
+var isPass = ramMarks > passingMarks;  
+
+console.log(isPass);
+
+--it is wrong code: becoz if ramMarks = 35 then ?
+
+
+var isPass = ramMarks > passingMarks;  //false ..so here we need to make use of >=
+
+>= gte:  true: if first value is gt or equal to the second value and, false: if the first value is less than second value.
+
+
+--amazon discount for 10% if the purchage is more than 4000;
+
+var minimumPurchage = 4000;
+var rahulPurchage = 5000;
+
+var isEligibleForDisount = rahulPurchage >= minimumPurchage;
+
+console.log(isEligibleForDisount);
+
+
+example 3: eligible for vote:
+
+var legelAge = 18;
+var amitAge = 17;
+
+var isEligibleForVote = amitAge >= legalAge;
+
+
+console.log(isEligibleForVote);
+
+example:
+
+Swaping 2 number without taking 3rd variable:
+
+var a = 5;
+var b = 10;
+
+console.log("Before swapping a and b is ",a,b);
+
+a = a + b;
+b = a - b;
+a = a - b;
+
+console.log("Before swapping a and b is ",a,b);
+
+
+
+
+JavaScript Type Conversion (Type Coercion):
+===========================================
+
+--In JavaScript, type conversion (or type coercion) is the automatic or explicit conversion of values from one data type to another. JavaScript is a loosely typed language, which means that it performs automatic conversions between types based on the context.
+
+There are two types of type conversions in JavaScript:
+
+1. Implicit Conversion (Automatic Coercion)
+2. Explicit Conversion (Manual Coercion)
+
+
+1. Implicit Type Conversion (Coercion):
+
+--JavaScript automatically converts one data type to another when necessary. This usually happens when using operators like +, comparison operators like ==, or in conditional contexts.
+
+
+String Conversion:
+-------------------
+If one operand is a string and the other is not, JavaScript will convert the non-string operand into a string, and then perform string concatenation.
+
+Example:
+
+var result = "The number is " + 5;
+console.log(result);  // Output: "The number is 5"
+
+Here, the number 5 is converted to the string "5" and concatenated with the other string.
+
+
+Numeric Conversion:
+---------------------
+
+When using arithmetic operators (-, *, /) or relational operators (>, <), JavaScript will try to convert the operands into numbers.
+
+Example:
+
+var result = "10" - 2;  // "10" is converted to the number 10
+console.log(result);     // Output: 8
+
+var result2 = "apple" - 2;  // "apple" can't be converted to a number
+console.log(result2);       // Output: NaN (Not a Number)
+
+
+Boolean Conversion:
+-------------------
+
+In contexts where a boolean is expected (like if conditions), JavaScript will coerce the value into a boolean. The following values are considered falsy (they convert to false):
+
+0
+"" (empty string)
+null
+undefined
+
+
+Example:
+
+if(0){
+    console.log("hello");
+}
+else{
+    console.log("hi");
+}
+
+
+
+
+2. Explicit Type Conversion (Manual Coercion):
+
+--You can explicitly convert values to different types using JavaScript’s built-in functions. This is useful when you want precise control over type conversion.
+
+
+
+Convert to String:
+------------------
+
+You can convert any value to a string using the String() function or by concatenating the value with an empty string (+ "").
+
+Example:
+
+let num = 123;
+let str = String(num);   // Converts number to string "123"
+console.log(str);        // Output: "123"
+
+let bool = true;
+let boolStr = String(bool);   // Converts boolean to string "true"
+console.log(boolStr);         // Output: "true"
+
+
+
+Convert to Number:
+------------------
+
+You can convert values to numbers using the Number() function, or by using unary operators like + or -.
+
+var str = "123";
+var num = Number(str);    // Converts string to number 123
+console.log(num);         // Output: 123
+
+var bool = true;
+var boolNum = Number(bool);   // true is converted to 1
+console.log(boolNum);         // Output: 1
+
+var result = +"456";    // Using unary + to convert string to number
+console.log(result);    // Output: 456
+
+
+Tips:
+
+- true becomes 1 and false becomes 0.
+- null becomes 0, but undefined becomes NaN (Not a Number).
+
+parseInt() function.
+--------------------
+
+--This function is also used to convert an string to a number(Whole number)
+
+--It will truncate the decimal point number.
+
+Example:
+
+console..log(parseInt("100")+10);
+
+console..log(parseInt("100sfdf")+10);
+
+console..log(parseInt("sdfd100")+10);
+
+
+
+
+
+conditional statement:
+=====================
+
+1. if
+2. if-else
+3. if..else-if...else (if-else ladder)
+4. nested if-else
+
+
+var x= 10;
+var y= 20;
+
+
+
+	x == y
+           |
+  ---------------------
+  |		      |
+true		     false
+
+
+example1:
+
+var result = 5 > 4;
+
+if(result)
+{
+console.log("5 is greater");
+}
+
+
+
+example2:
+
+console.log("code starts");
+
+if(true)
+{
+	console.log("I am inside");
+}
+
+console.log("code end");
+
+
+example3:
+
+console.log("code starts");
+
+var name1="ram";
+var name2="shyam";
+
+
+if(name1 === name2)
+{
+	console.log("Both names are equal");
+}
+
+console.log("code end");
+
+
+if-else:
+---------
+
+example3:
+
+console.log("code starts");
+
+var name1="ram";
+var name2="shyam";
+
+
+if(name1 === name2)
+{
+	console.log("Both names are equal");
+}
+else
+{
+	console.log("Both names are not equal");
+}
+
+
+console.log("code end");
+
+
+example4:
+
+checking a number is divisible by 3 or not:
+
+var num = 15;
+
+if(num % 3 == 0)
+{
+	console.log("Number is divisible by 3");
+}
+else
+{
+	console.log("Number is not divisible by 3");
+}
+
+
+example5: checking a given number is odd or even:
+
+var num = 21;
+
+if(num % 2 === 0)
+{
+	console.log("Number is even");
+}
+else
+{
+	console.log("Number is odd");
+}
+
+
+
+
+
+
+
+
+
+example6: 
+
+getting the last digit of any number:
+
+var num = 4654;
+
+var lastDigit = num % 10;
+
+console.log("last digit is: ",lastDigit);
+
+
+example6: 
+
+
+var marks = 500;
+
+if(marks > 600)
+{
+	console.log("First Div");
+}
+else
+{
+	console.log("Second Div");
+}
+
+// another way
+
+var result = "First Div";
+
+if(marks <= 600)
+{
+	result = "Second Div";
+}
+
+console.log(result);
+
+//another way
+
+var result = (marks > 600) ? "First Div" : "Second Div";
+
+console.log(result);
+
+
+
+
+
+
+if..else-if..else:
+------------------
+
+Bill and discount:
+
+if total_bill is greater than or equal 1000 : 20% discount
+if total_bill is greater than or equal 500 : 10% discount
+ 
+
+
+var total_bill = 1500;
+
+if(total_bill >= 500)
+{
+console.log("10% discount");
+}
+else if(total_bill >= 1000)
+{
+console.log("20% discount");
+}
+else
+{
+console.log("No discount");
+}
+
+
+
+**Note: Conditions should be checked from the most specific (highest value) to the most general (lowest value). 
+
+
+
+diff bt if..if..if and if..else-if..else
+------------------------------------------
+
+
+using if..else-if..else
+------------------------
+
+example1: poor family: only one thing
+
+
+
+var rice_available = true;
+var wheat_available = true;
+var apple_available = true;
+
+
+
+if(rice_available)
+{
+	console.log("Buy Rice");
+}
+
+else if(wheat_available)
+{
+	console.log("Buy Wheat");
+}
+
+else if(apple_available)
+{
+	console.log("Buy Apple");
+}
+else
+{
+	console.log("Nothing is available");
+}
+
+
+
+
+--Here only one option will be selected 
+
+
+
+
+
+using if..if..if
+------------------------
+
+example1: rich family: multiple things
+
+
+
+
+var rice_available = true;
+var wheat_available = true;
+var apple_available = true;
+
+if(rice_available)
+{
+console.log("Buy Rice");
+}
+
+if(wheat_available)
+{
+console.log("Buy Wheat");
+}
+
+if(apple_available)
+{
+console.log("Buy Apple");
+}
+
+
+
+--here multiple options will be selected.
+
+
+
+nested if-else:  (condition inside the condition)
+===============
+
+var gender = "male";
+var age = 18;
+
+if(gender === "male")
+{
+
+	if(age >= 21)
+	{
+		console.log("male can marry");
+	}
+	else
+	{
+		console.log("male can't marry");
+	}	
+
+}
+else if(gender === "female")
+{
+
+	if(age >= 18)
+	{
+		console.log("female can marry");
+	}
+	else
+	{
+		console.log("female can't marry");
+	}	
+
+}
+else
+{
+
+console.log("Invalid gender...");
+
+}
+
+
+
+
+
+
+login example:
+---------------
+
+var storedUsername="ram@gmail.com";
+var storedPassword = "12345";
+
+var inputUsername="ram@gmail.com";
+var inputPassword = "123";
+
+
+if(inputUsername === storedUsername)
+{
+
+	if(inputPassword === storedPassword)
+	{
+		console.log("Welcome User");
+	}
+	else
+	{
+
+		console.log("Invalid password..");
+	}
+
+}
+else
+{
+
+console.log("Invalid email/username");
+
+}
+
+
+
+leap year: 
+-----------
+
+--it should be divisible by 4, and should not divisible by 100, and if divisible by 100 then it should be divisible by 400 also.
+
+
+2004, 2008, 2012, 2016: are divisible by 4 so they are leap year.
+
+1900, 2100, 2200: those are divisible by 100 but not divisible by 400 so they are not leap year.
+
+1600, 2000, 2400: these are divisible by 100 as well as divisible by 400 also so they are leap year
+
+
+
+
+
+approach1:
+-----------
+
+var year = 2024;
+
+if (year % 4 === 0)
+{
+    if (year % 100 !== 0) 
+     {
+        console.log(year + " is a leap year");
+     } 
+     else 
+      {
+        	if (year % 400 === 0) 
+		{
+            		console.log(year + " is a leap year");
+        	} 
+		else 
+		{
+            		console.log(year + " is not a leap year");
+        	}
+    	}
+} 
+
+else 
+{
+    console.log(year + " is not a leap year");
+}
+
+
+
+approach2:
+----------
+
+var year = 2016;
+
+
+if(year % 4 == 0)
+{
+	if(year % 100 == 0)
+	{
+		if(year % 400 == 0)
+		{
+			console.log("leap year");
+		}
+		else
+		{
+			console.log("Not a leap year");
+		}
+
+	}
+	else
+	{
+		console.log("Leap year");
+	}
+}else
+{
+	console.log("Not a leap year");
+}
+
+
+example:
+
+
+var name1 = "ram";
+var name2  = "ramesh";
+
+if(name1 == name2)
+{
+
+console.log("Welcome user");
+
+}
+else
+{
+console.log("Invalid username");
+
+}
+
+
+
+example2:
+
+if(name1 !== name2)
+{
+console.log("Invalid username");
+}
+else
+{
+console.log("Welcome user");
+
+}
+
+
+
+checking a number, whether it is positive, negative or zero:
+===========================================================
+
+var num = -1;
+
+if( num > 0)
+{
+  console.log("number is positive");
+}
+else if(num < 0)
+{
+  console.log("number is negetive");
+}
+else
+{
+  console.log("number is zero");
+}
+
+
+
+
+
+
+
+
+
