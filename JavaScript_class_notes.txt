@@ -414,7 +414,7 @@ example1:
 var x= 10;
 var y = 20;
 
-console.log(x+y); //10
+console.log(x+y); //30
 
 example2:
 
@@ -482,6 +482,16 @@ example:
 
 
 var x = 3 + 2 - 1 * 3**2 /2;
+
+3+2-1*9/2
+
+3+2-9/2
+3+2-4.5
+
+5-4.5 = 0.5
+
+
+
 
 
 console.log(x); 
@@ -659,10 +669,10 @@ var masai = 5;
 var a = "masai";
 var b = masai;
 
-console.log(a == b); 
-console.log(a != b); 
-console.log(a === b); 
-console.log(a !== b); 
+console.log(a == b); //false
+console.log(a != b); //true
+console.log(a === b);  //false
+console.log(a !== b);  //true
 
 
 
@@ -796,7 +806,17 @@ null
 undefined
 
 
-Example:
+Example1: 
+
+
+console.log(true+true); 
+
+console.log(5+true); 
+
+
+
+
+Example2:
 
 if(0){
     console.log("hello");
@@ -830,6 +850,9 @@ let boolStr = String(bool);   // Converts boolean to string "true"
 console.log(boolStr);         // Output: "true"
 
 
+var x=[10,20,30]+"";
+console.log(typeof x);
+
 
 Convert to Number:
 ------------------
@@ -844,7 +867,7 @@ var bool = true;
 var boolNum = Number(bool);   // true is converted to 1
 console.log(boolNum);         // Output: 1
 
-var result = +"456";    // Using unary + to convert string to number
+var result = +"456";    // Using unary + or - to convert string to number
 console.log(result);    // Output: 456
 
 
@@ -852,6 +875,9 @@ Tips:
 
 - true becomes 1 and false becomes 0.
 - null becomes 0, but undefined becomes NaN (Not a Number).
+
+
+
 
 parseInt() function.
 --------------------
@@ -986,25 +1012,7 @@ else
 }
 
 
-
-
-
-
-
-
-
-example6: 
-
-getting the last digit of any number:
-
-var num = 4654;
-
-var lastDigit = num % 10;
-
-console.log("last digit is: ",lastDigit);
-
-
-example6: 
+Example: 
 
 
 var marks = 500;
@@ -1040,8 +1048,121 @@ console.log(result);
 
 
 
+
+
+
+
+
+Example: 
+
+getting the last digit of any number:
+
+var num = 4654;
+
+var lastDigit = num % 10;
+
+console.log("last digit is: ",lastDigit);
+
+
+
+
 if..else-if..else:
 ------------------
+
+
+Example1: find out a number is positive or negative or zero ?
+
+
+var num = -5;
+
+if(num > 0){
+	console.log("Positive number");
+}
+else if(num < 0){
+console.log("Negetive number");
+}
+else{
+	console.log("Number is zero");
+}
+
+
+Example2: Compare two numbers:
+
+
+var num1= 10;
+
+var num2= 20;
+
+if(num1 > num2){
+	console.log("Num1 is greater");
+}
+else if(num1 < num2){
+	console.log("Num2 is greater");
+}
+else{
+console.log("Both are equal");
+}
+
+
+
+Assignment:
+
+var num = 10;
+
+if num value is divisible by 5 then print "Hello"  // 10
+if num value is divisible by 3 then print "Welcome" // 9 
+if num value is divisible by 5 and 3 then print "Hello Welcome"  // 15,30
+if num value is not divisible by 5 and 3 then print "invalid number" //2,11
+
+
+var num = 10;
+
+if(num % 5 == 0)
+{
+	console.log("Hello");
+}
+else if(num % 3 == 0)
+{
+	console.log("Welcome");
+}
+else if(num % 5 == 0 && num % 3 == 0)
+{
+	console.log("Hello Welcome");
+}
+else
+{
+	console.log("Invalid number");
+}
+
+
+**The above code is not correct, the correct code will be as follows:
+
+
+var num = 10;
+
+if(num % 5 == 0 && num % 3 == 0)
+{
+	console.log("Hello Welcome");
+}
+else if(num % 5 == 0)
+{
+	console.log("Hello");
+}
+else if(num % 3 == 0)
+{
+	console.log("Welcome");
+}
+else
+{
+	console.log("Invalid number");
+}
+
+
+
+
+
+
+
 
 Bill and discount:
 
@@ -1303,58 +1424,3510 @@ if(year % 4 == 0)
 }
 
 
+
+
+
+
+Java Script logical operator:
+=============================
+
+--On the number datatype we can perform +, -, *, /, % operations
+
+example:
+
+2, 5, -8, 4, 6, -2, 7...
+
+2 + 2 = 4;
+
+
+--similarly on the boolean data types we can perform some operations with the help of logical operators.
+
+
+1. Logical AND &&
+2. Logical OR ||
+3. Logical NOT !  
+
+
+
+
+
+boolean data types values : true/false
+
+
+Note: the logical operators works on the boolean values and the result of the logical operator will also be in the boolean value.
+
+
+
+
+
+
+1.Logical AND &&
+------------------
+
+boolean isPanCardAvailable = true;
+boolean isMarksSheetAvailable = true;
+
+
+if(isPanCardAvailable && isMarksSheetAvailable)
+{
+	console.log("You will get the admission");
+}
+else
+{
+	console.log("You will not get the admission");
+}
+
+
+rule:
+
+true && true = true
+
+true && false = false
+
+false && true = false
+
+false && false = false
+
+
+
+example:
+
+console.log(true && true); // true
+console.log(true && false); // false
+console.log(false && true); // false
+console.log(false && false); // false
+
+
+
+--using this logical operator we can evaluate multiple expressions also.
+
+example
+
+if a student gets the marks in "eng" more than 60% and in "math" more than 70% and in "phy" more than 80% then he will get the bike.
+
+
+
+eng > 60  math > 70   phy > 80
+
+true	   true		true       ====> true
+
+true	   true 	false       ====> false
+
+
 example:
 
 
-var name1 = "ram";
-var name2  = "ramesh";
+var a = 5 > 3; //true
 
-if(name1 == name2)
+var b = 6 > 4; //true
+
+var c = a && b; // true
+
+var d = (5 > 3) && (6 > 4);
+
+console.log("Result is ",d);
+
+
+
+
+
+combining nested if-else using logical operator:
+================================================
+
+example:
+
+if(5 > 3)
 {
 
-console.log("Welcome user");
+	if(10 > 2)
+	{
+		console.log("welcome");
+	}
+
+}
+
+
+
+
+--here "welcome" will be printed if both condition will be true..
+
+so in this case we can combine both if condition in only one if condition with the help of logical && operator:
+
+if(5 > 3 && 10 > 2)
+{
+	console.log("welcome");
+}
+
+
+
+
+ 
+
+
+
+solving the login problem: using nested if else
+================================================
+
+var storedUsername="ram@gmail.com";
+var storedPassword = "12345";
+
+var inputUsername="ram@gmail.com";
+var inputPassword = "123";
+
+
+if(inputUsername === storedUsername)
+{
+
+	if(inputPassword === storedPassword)
+	{
+		console.log("Welcome User");
+	}
+	else
+	{
+
+		console.log("Invalid password..");
+	}
 
 }
 else
 {
-console.log("Invalid username");
+	console.log("Invalid email/username");
+}
+
+
+
+solving the same login problem: using logical AND operator
+==========================================================
+
+
+if(inputUsername === storedUsername && inputPassword === storedPassword){
+
+	console.log("Welcome user");
+}
+else
+{
+	console.log("Invalid username or password");
+}
+
+
+
+solving the marriage problem with nested if-else
+==================================================
+
+
+var gender = "male";
+var age = 25;
+
+
+if(gender === "male")
+{
+	if(age >= 21)
+	{
+		console.log("Male can marry");
+	}
+	else
+	{
+		console.log("Male can not marray");
+	}
+
+}
+else if(gender === "female")
+{
+
+	if(age >= 18){
+		console.log("Female can marry");
+	}
+	else
+	{
+		console.log("Female can not marray");
+	}
+
+
+}
+else
+{
+	console.log("Invalid gender");
+}
+
+
+
+
+solving the marriage problem with logical operator
+==================================================
+
+var gender = "male";
+var age = 25;
+
+
+if(gender === "male" && age >= 21)
+{
+	console.log("male can marry");
+}
+else if(gender === "female" && age >= 18)
+{
+	console.log("female can marry");
+}
+else
+{
+	console.log("Invalid gender or age.. can't marray");
+}
+
+
+
+OR || operator: it returns true if any one condition is true
+================
+
+
+boolean isPanCardAvailable = true;
+boolean isMarksSheetAvailable = false;
+
+
+if(isPanCardAvailable || isMarksSheetAvailable)
+{
+	console.log("You will get the admission");
+}
+else
+{
+	console.log("You will not get the admission");
+}
+
+
+rule:
+
+true && true = true
+
+true && false = true
+
+false && true = true
+
+false && false = false
+
+
+example:
+
+console.log(true && true); // true
+console.log(true && false); // true
+console.log(false && true); // true
+console.log(false && false); // false
+
+
+marrage problem using AND and OR:
+================================
+
+
+var gender = "male";
+var age = 25;
+
+
+if( (gender === "male" && age >= 21) || (gender === "female" && age >= 18))
+{
+	console.log(gender+" can marry");
+}
+else
+{
+	console.log("Invalid gender or age.. can't marray");
+}
+
+
+
+another way:
+------------
+
+
+var isMaleEligible = ((gender === "male") && (age >= 21));
+
+
+var isFemaleEligible = (gender === "female" && age >= 18);
+
+
+if(isMaleElegible || isFemaleEligible){
+
+	console.log(gender+" can marry");
+
+}
+else
+{
+	console.log("Invalid gender or age.. can't marray");
+}
+
+
+
+
+leap year using logical operator:
+=================================
+
+if((year % 4 === 0 && year % 100 != 0) || (year % 400 === 0))
+{
+
+	console.log("it is a leap year");
+} 
+else
+{
+	console.log("it is not a leap year");
+}
+
+
+Not operator: negetion operator !:
+=================================
+
+if(!false)
+{
+	console.log("hello");
+}
+else
+{
+	console.log("hi");
+}
+
+
+
+Assignment1:
+------------
+
+Given any character, if it is a vowel print "Vowel" otherwise print not a vowel.
+
+
+Assignment2: 
+-------------
+
+Given and character if it is a consonant print "Consonant" otherwise print not a consonant.
+
+
+Assignment3: 
+------------
+
+Given 3 numbers print which is greatest.
+
+
+Assignment4:
+------------
+
+Example: Given the year of birth, if the
+  
+  1. Age is between 13 and 19 (both included) print Teenage and
+  2. Age in between 20 and 29 (both included) print Twenties
+   otherwise print Adult.
+
+Assignment5:
+------------
+
+Given a student age, find out wheater he is eligible for vote or not: using terinary operator.
+
+Assignment6:
+------------
+
+Given a number, find out it is even or odd using terinary operator.
+
+
+
+
+
+
+
+Assignment solution:
+-------------------------
+
+var num = 10;
+
+if num value is divisible by 5 then print "Hello"  // 10
+if num value is divisible by 3 then print "Welcome" // 9 
+if num value is divisible by 5 and 3 then print "Hello Welcome"  // 15,30
+if num value is not divisible by 5 and 3 then print "invalid number" //2,11
+
+
+var num = 10;
+
+if(num % 5 == 0)
+{
+	console.log("Hello");
+}
+else if(num % 3 == 0)
+{
+	console.log("Welcome");
+}
+else if(num % 5 == 0 && num % 3 == 0)
+{
+	console.log("Hello Welcome");
+}
+else
+{
+	console.log("Invalid number");
+}
+
+
+**The above code is not correct, the correct code will be as follows:
+
+
+var num = 10;
+
+if(num % 5 == 0 && num % 3 == 0)
+{
+	console.log("Hello Welcome");
+}
+else if(num % 5 == 0)
+{
+	console.log("Hello");
+}
+else if(num % 3 == 0)
+{
+	console.log("Welcome");
+}
+else
+{
+	console.log("Invalid number");
+}
+
+
+
+
+
+
+
+
+vowel-consonant solution:
+=========================
+
+approach 1:
+
+var char = "e";
+
+if( char == "a" || char=="e" || char=="i" || char=="o" || char=="u" )
+{
+  console.log("is a vowel");
+}
+else{
+  console.log("It is a consonent");
+}
+
+approach2:
+
+var char = "e";
+
+if( !(char == "a" || char=="e" || char=="i" || char=="o" || char=="u") )
+{
+  console.log("is a consonant");
+}
+else{
+  console.log("It is a vowel");
+}
+
+
+
+approach3:
+
+
+var char = "a";
+
+if((char != "a") && (char != "e") && (char != "i") && (char != "o") && char!="u" )
+{
+  console.log(char,"Consonant");
+}
+else{
+  console.log("Not a consonant");
+}
+
+
+
+
+
+
+Assignment solution:  Given 3 numbers , print which is greatest
+
+var a = 15;
+var b = 20;
+var c = 12;
+
+if((a>b) && (a>c))
+{
+  console.log("a is greatest");
+}
+else if((b>a) && (b>c))
+{
+  console.log("b is greatest");
+}
+else if((c>a) && (c>b))
+{
+  console.log("c is greatest");
+}
+else{
+  console.log("All are equal");
+}
+
+
+Assignment5 solution: Given the year of birth, if the
+  
+  1. Age is between 13 and 19 (both included) print Teenage and
+  2. Age in between 20 and 29 (both included) print Twenties
+	otherwise print "Adult".   
+
+
+ var yob = 1996;
+ var age = 2023;
+
+ console.log(age);
+
+ if( (age>=13) && (age<=19) )
+ {
+   console.log("Teenage");
+ }
+ else if((age>=20) && (age<=29))
+ {
+   console.log("Twenties")
+ }
+ else
+ {
+    console.log("Adult");
+ }
+
+
+Assignment solution: Vote eligibility using ternary operator
+
+
+
+var age = 17;
+
+var message = (age >= 18) ? "Eligible for vote" : "Not eligible for vote";
+
+console.log(message);
+
+
+Assignment solution: checking a number is Odd or even:
+
+var number = 12;
+
+var result = number % 2 === 0 ? "Even": "Odd";
+
+console.log(result);
+
+
+
+Switch Case:
+=============
+
+Whenever we have multiple options and we have a choice:
+
+Example:
+
+var num = 2;
+
+switch(num)
+  {
+
+    case 1: 
+	
+        console.log("Depositing amount");
+
+    case 2:
+	 
+        console.log("withdrawing amount");
+        console.log("hello");
+	
+    case 3: 
+        console.log("transfering the amount");
+
+    default:
+        console.log("no operation");
+      
+  }
+
+
+- On choosing the option in above code, it will output the code present corresponding to the given option and also print all the output of all the cases which present below the chosen option.
+
+- To avoid this, we will use break
+
+
+Example:
+
+var option = 2;
+
+switch(option)
+  {
+
+    case 1: 
+
+        console.log("Depositing amount");
+        break;
+      
+    case 2: 
+        console.log("withdrawing amount");
+        console.log("hello");
+        break;
+    case 3: 
+        console.log("transfering the amount");
+        break;
+    default:
+        console.log("no operation");
+      
+  }
+
+
+Example:
+
+var char = "i";
+
+switch(char)
+{
+	case "a":
+	case "e":
+	case "i":
+	case "o":
+	case "u":
+		  console.log("vowel");
+	          break;
+	default : 
+		  console.log("Not a vowel");
+}
+
+
+
+
+Example:
+
+Given the days of the week in short format "Sun", "Mon" ... print in long format "Sunday", "Monday", ...
+
+
+
+
+Using if-else:
+---------------
+
+var day = "wed";
+
+if (day === "mon") 
+{
+    console.log("Monday");
+} 
+else if (day === "tue") 
+{
+    console.log("Tuesday");
+} 
+else if (day === "wed") 
+{
+    console.log("Wednesday");
+}
+else if (day === "thu") 
+{
+    console.log("Thursday");
+} 
+else if (day === "fri") 
+{
+    console.log("Friday");
+} 
+else if (day === "sat") 
+{
+    console.log("Saturday");
+} 
+else if (day === "sun") 
+{
+    console.log("Sunday");
+} 
+else 
+{
+    console.log("Invalid Day");
+}
+
+
+
+Using Switch case:
+-----------------
+
+var day = "wed";
+
+switch(day)
+{
+  case "mon":
+	
+          console.log("Monday");
+          break;
+	
+   case "tue":
+          console.log("tuesday");
+          break;
+
+   case "wed":
+          console.log("wednesday");
+          break;
+
+   case "thu":
+          console.log("thursday");
+          break;
+
+   case "fri":
+          console.log("Friday");
+          break;
+
+   case "sat":
+          console.log("Saturday");
+          break;
+
+   case "sun":
+          console.log("sunday");
+          break;
+
+    default :
+          console.log("Invalid Day");
 
 }
 
+
+Example: Given a month number find out the month name:
+
+
+var monthNumber = 9;
+var monthName;
+
+switch (monthNumber) {
+    case 1:
+        monthName = "January";
+        break;
+    case 2:
+        monthName = "February";
+        break;
+    case 3:
+        monthName = "March";
+        break;
+    case 4:
+        monthName = "April";
+        break;
+    case 5:
+        monthName = "May";
+        break;
+    case 6:
+        monthName = "June";
+        break;
+    case 7:
+        monthName = "July";
+        break;
+    case 8:
+        monthName = "August";
+        break;
+    case 9:
+        monthName = "September";
+        break;
+    case 10:
+        monthName = "October";
+        break;
+    case 11:
+        monthName = "November";
+        break;
+    case 12:
+        monthName = "December";
+        break;
+    default:
+        monthName = "Invalid Month";
+}
+
+console.log("Month name is :",monthName);
+
+
+switch with boolean value:
+==========================
+
+
+Example: calculating the grade based on the score using switch case:
+
+var score = 90;
+
+// Check if the entered score is within the valid range (0 to 100)
+if (score >= 0 && score <= 100) {
+    
+
+    var letterGrade;
+
+    switch (true) {
+        case (score >= 90):
+            letterGrade = "A";
+            break;
+        case (score >= 80):
+            letterGrade = "B";
+            break;
+        case (score >= 70):
+            letterGrade = "C";
+            break;
+        case (score >= 60):
+            letterGrade = "D";
+            break;
+        default:
+            letterGrade = "F";
+    }
+
+    console.log("Your letter grade is: ",letterGrade);
+} 
+else 
+{
+    console.log("Invalid score. Please enter a numerical score between 0 and 100.");
+}
+
+
+
+Increment and Decrement:
+========================
+
+
+
+var x = 5;
+
+now to increase the value of x by 1, we have 2 options:
+
+option 1:
+
+x = x+1;  // incrementing the value of x and reassigning the value to x.
+
+console.log(x); //6
+
+decrement the value by 1:
+
+var y = 5;
+
+y = y-1;
+
+console.log(y);
+
+example:
+
+var x = 5;
+
+x = x+1;
+
+x = x+1;
+
+x= x+1;
+
+console.log(x); 
+
+x = x-1;
+
+x = x-1;
+
+x = x+1;
+
+console.log(x); 
+
+
+
+option 2:
+
+x++  post increment
+++x  pre increment
+
+--> both will increment the value of x by 1.
+
+
+x-- post decrement
+--x pre decrement
+
+example:
+
+var x = 5;
+
+x++;
+
+console.log(x); 
+
+var y = 5;
+
+++y;
+
+console.log(y); 
+
+
+
+Difference between post increment and pre increment:
+-----------------------------------------------------
+
+example1:
+
+var x = 2;
+
+var y = x;
+
+console.log(x); 
+console.log(y); 
 
 
 example2:
 
-if(name1 !== name2)
+
+var x = 2;
+
+var y = x++; // assign the value of x to y and then increment it.
+
+console.log(x); 
+console.log(y); 
+
+Note: post increment means, first use the variable and then increment it.
+
+
+example3:
+
+var x = 2;
+
+var y = ++x; // first increment the value of x then assign it to the y.
+
+console.log(x); 
+console.log(y); 
+
+Note: pre increment means, first increment the variable and then use it.
+
+example4:
+
+var age = 25;
+
+console.log(age++); 
+
+console.log(age);  
+
+example5: pre increment:
+
+var age = 25;
+
+console.log(++age); 
+
+console.log(age); 
+
+
+
+
+
+similar type of operation will happen with post decrement and pre decrement operator as well.
+
+example6: post decrement
+
+var age = 25;
+
+console.log(age--); 
+
+console.log(age); 
+
+
+example7: pre decrement
+
+var age = 25;
+
+console.log(--age); 
+
+console.log(age); 
+ 
+
+Example 8:
+
+var a = 10;
+
+var c = ++a;
+
+var b = 10;
+
+var d = b++;
+
+console.log("a value is :",a); 
+console.log("b value is :",b); 
+console.log("c value is :",c); 
+console.log("d value is :",d); 
+ 
+
+
+Example 9:
+
+
+var a = 6;
+
+var b = a--;
+
+var c = 10;
+
+var d = --c;
+
+console.log("a value is :",a); 
+console.log("b value is :",b); 
+console.log("c value is :",c); 
+console.log("d value is :",d); 
+
+
+Example1:
+
+var x =10;
+
+x++;
+
+var y = ++x;
+
+console.log(x); 
+console.log(y); 
+
+
+example2:
+
+var x = 10;
+
+x++;
+x++;
+++x
+x++
+var y = ++x;
+
+console.log(x); 
+console.log(y);
+
+
+
+example3:
+
+var a = 10;
+
+var b = ++a;
+
+var c = 10;
+
+var d = c++;
+
+console.log(a); 
+console.log(b); 
+console.log(c); 
+console.log(d); 
+
+
+
+***************************Loops In JavaScript***********************************************************
+
+
+
+
+
+
+Loops in Java-script: 
+=====================
+
+--repetation of some code/task again and again...
+
+realtime example: 
+
+music app (songs play in loop)
+paani puri 
+
+droping the 20 guests to the railway station by bike one by one. //same task need to be repeated 20 times.
+
+
+
+
+
+--in coding example, assume we have to print some student details from the database. and inside our database we have 100 students records are there, then writing the code to feach each student details and printing it on the console 100 time will be a cumbersome process.
+
+--so we can write the code the fetch the students details from the database inside a loop only one time, and we can run this loop for 100 times.
+
+
+--another example: if we want to print some statement 1000 times like 
+
+console.log("Welcome to JavaScript");
+
+--so instead of writing this statement 1000 time we can define this statement inside a loop and run that loop 1000 times.
+
+
+--another example: In Amazon shopping app, there are multiple products like:
+
+Product: 	Price
+
+earphone: 	500
+headphone:  	600
+bottle: 	100
+watch: 		1000
+--
+--
+--
+
+
+and now Amazon has decided to increase the prices of all the products by 10%, so here developer should not go to each product one by one and increase their price by 10%.
+
+--developers need to write the code for increasing the price for the products inside the loop and this loop will run till all the products are available.
+
+
+
+Types of Loop:
+==============
+
+--there are 3 types of loop.
+
+1. while loop
+2. do-while loop
+3. for loop
+
+1. while loop:
+--------------
+
+--every loop has 4 parts:
+
+1. starting point or initialization
+2. ending point // condition..till when
+3. actual code or body // what we need to perform
+4. incrementing or decrement.
+
+
+Note: if a loop does not have any ending point then that kind of loop is called as infinite loop.
+
+
+example:
+
+
+jumping marathon(one jump at a time)
+0--------------------------------------------------------------------100
+
+
+starting point : 0
+ending point(till when he will make a jump...condition) : 100
+making a jump (actual code or body) 
+incrementing by 1 jump (how many jump...here 1 jump at a time)
+
+
+so here :
+
+jump = 0
+jump <=100
+console.log("Jumping");
+jump = jump + 1;
+//jump++;
+
+syntax:
+
+
+starting point
+
+while(condition) //till this condition is true
 {
-console.log("Invalid username");
+//code
+
+//increment or decrement
+}
+
+
+example:
+
+var jump = 0;
+
+while(jump <= 10)
+{
+console.log("Jumping ", jump);
+
+jump++; // jump = jump + 1;
+}
+
+
+
+flow of a while loop
+---------------------
+
+
+1. starting point
+
+2. while(condition) //till this condition is true
+{
+
+3. //code
+
+4. //increment or decrement
+}
+
+
+1 2 3 4
+2 3 4
+2 3 4
+2 3 4
+till 2.(condition will become false)
+
+
+
+
+
+lets print "Welcome to JavaScript" message 10 times:
+----------------------------------------------
+
+var num = 1; //starting point or initialization
+
+while(num <= 10)  // condition, till when this loop will run
+{
+
+console.log("Welcome to JavaScript"); // body
+
+num++; // incrementing by 1
+
+}
+
+
+another way:
+------------
+
+var num = 1; //starting point or initialization
+
+while(num != 6)  // condition, till when this loop will run
+{
+
+console.log("Welcome to JavaScript", num); // body
+
+num++; // incrementing by 1
+
+}
+
+
+--try to dry run the above example..
+
+Note: in the above program if we remove the last statement i.e num++ then it will go for an infinite loop.
+
+
+
+
+
+example:
+
+lets print the number starting from 50 to 70;
+
+
+
+var num = 50;
+
+while(num <= 70)
+{
+
+console.log(num);
+
+num++;
+
+}
+
+
+example: lets print all the even numbers between 0 to 50;
+
+
+var num = 0;
+
+while(num <= 50)
+{
+
+console.log(num);
+
+num = num+2;
+}
+
+
+another way:
+-------------
+
+var num = 0;
+
+while(num <= 50)
+{
+
+if(num % 2 === 0)
+{
+console.log(num);
+}
+
+num++;
+
+}
+
+
+
+
+
+Iphone example:
+===============
+
+suppose you want to buy one iphone: and the cost of this iphone is: 60000/-
+
+
+--and from your home every month you are getting your pocket money 5000/-
+
+--you think i will save 500 from each month of pocket money and i will put that 500 inside a piggy bank. 
+
+--and when it will become 60000/- then i will purchage the iphone.
+
+--so you will take one piggy bank and keep some initial amount inside that, lets say 1000.
+
+--now on every month you will put 500 inside this piggy bank till....that amount will bocome 60000 or above.
+
+example1:
+
+var amount_in_pb = 1000;
+
+while(amount_in_pb <= 60000)
+{
+
+console.log("Keeping 500 inside the piggy bank");
+
+amount_in_pb = amount_in_pb + 500;
+
+console.log("Final amount after the month is: ", amount_in_pb);
+
+}
+
+
+another way: with month count
+--------------
+
+var amount_in_pb = 1000;
+var month_count =1;
+
+
+while(amount_in_pb <= 60000)
+{
+
+console.log("Keeping 500 inside the piggy bank");
+
+amount_in_pb = amount_in_pb + 500;
+
+console.log("Final amount after the month: "+month_count++, amount_in_pb);
+
+}
+
+
+
+Assignments:
+
+1. printing all the even numbers from given number to the limit.
+
+2. printing "Welcome to JavaScript" 10 times. with number
+
+3. printing a table for a given number
+
+var x = 4
+
+4
+8
+12
+16
+20
+
+
+4. printing a table for a given number in descriptive manner.
+
+var x = 5;
+
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+--
+--
+5 * 10 = 50
+
+
+5. finding the sum of all the numbers starting to limit.
+
+6. finding the avg of all the numbers starting to limit.
+
+7. printin 1 to 10 in reverse order.
+
+8. printing the sum of all the multiple of 3 from stating to a given limit.
+
+9. count the sum of all odd numbers between 20 and 40.
+
+10. printing Odd and Even number with message from 50 to 60
+
+11. We have EmployeeId from 1 to 20, Employee number 5, 8, 12 are the managers, print the "Welcome EmployeeId". and for the remaining employees print "Hello EmployeeId".
+
+
+
+
+
+
+
+
+break and continue:
+===================
+
+break: it is used to stop the execution of a loop in the middle.
+
+
+Guest Analogy: 
+
+--There are 10 guests coming to my home, After 2-3 days they decided to leave their home.
+
+--They all have the train on the same day and at the same time.
+
+--I need to drop them at the railway station but I have one bike which can only take one person at a time.
+
+--In this case, I need to drop each guest one by one
+
+--Taking the First guest to the railway station, dropping them and arrive back and follow the same procedure again and again till the end.
+
+--Suppose I took the First Guest and dropped him to the Railway station and come back.
+
+--Again I took the Second Guest and follow the same.
+
+--Now, Next I took the third guest to Railway station and found that Train has gone.
+
+--So, Will I continue the above procedure or stopped it ?
+
+--Obviously, I will stop it.
+
+
+example: without break;
+
+var guest=1;
+
+while(guest <= 10)
+{
+
+console.log("Guest dropped at station",guest);
+
+guest++;
+
+}
+
+
+example: with break; when dropping 4th Guest, train gone...
+
+
+var guest=1;
+
+while(guest<=10)
+{
+
+if(guest == 4)
+{
+console.log("Train gone...");
+break;  //here control comes out from the loop
+}
+
+console.log("Guest dropped at station",guest);
+
+guest++;
+
+}
+
+
+
+example:
+
+
+var guest=1;
+
+while(guest<=10)
+{
+
+console.log("Guest dropped at station",guest);
+
+if(guest == 4)
+{
+console.log("Train gone...");
+break;
+}
+
+guest++;
+
+}
+
+
+
+
+predict the output:
+===================
+
+
+Q1/-
+
+while(true)
+{
+
+	console.log("Welcome");
+
+}
+
+
+Q2/-
+
+var count = 0;
+
+while(true)
+{
+
+count++;
+
+console.log("Welcome", count);
+
+}
+
+
+
+Q3/-
+
+var count = 0;
+
+while(true)
+{
+
+	count++;
+
+	if(count == 11)
+	{
+		break;
+	}
+
+	console.log("Welcome", count);
+
+}
+
+
+
+
+
+Iphone example with break:
+---------------------------
+
+--if on the 4th month we win the lottery for 60000 then we need to break the loop:
+
+var amount_in_pb = 1000;
+var month_count =1;
+
+
+while(amount_in_pb <= 60000)
+{
+
+console.log("Keeping 10000 inside the piggy bank");
+
+amount_in_pb = amount_in_pb + 10000;
+
+console.log("Final amount after the month: "+month_count++, amount_in_pb);
+
+  if(month_count == 4){
+    console.log("Win the lottery..")
+    break;
+  }
+
+} 
+
+
+
+continue:
+==========
+
+--it is used to skip one iteration of the loop.
+
+--after continue it will skip the remaining code and control will go the condition again.
+
+
+while(con){
+
+--
+--
+--
+continue;
+--
+--
+--
+}
+
+
+
+
+
+
+
+
+
+Guest Analogy:
+--------------
+
+--Suppose the third guest is Sick, In that case I will skip him.
+
+--and I will continue with the fourth guest and follow the same procedure.
+
+
+
+example:
+
+var guest=1;
+
+while(guest <= 10)
+{
+
+console.log("Guest dropped at station",guest);
+
+if(guest == 4)
+{
+continue;
+}
+
+guest++;
+
+}
+
+
+
+--trace the above example....
+
+
+example: above code modified.
+
+var guest=1;
+
+while(guest<=10)
+{
+
+if(guest == 4)
+{
+console.log("Guest is Sick");
+guest++; //update the guest count and skip the furthur execution for this cycle
+continue;
+}
+
+console.log("Guest dropped at station",guest);
+guest++;
+
+}
+
+
+
+Example: printing 0 to 10.
+
+
+var num = 0;
+
+while(num <= 10)
+{
+
+console.log(num);
+
+num++;
+
+}
+
+
+
+Example: printing 0 to 10 while skipping 3 and 7
+
+
+var num = 0;
+
+while(num <= 10)
+{
+
+if(num === 3 || num === 7)
+{
+num++; //update the num
+continue; //skip the remaining code of this cycle
+
+}
+
+console.log(num);
+
+num++;
+
+}
+
+
+
+
+
+Iphone example with continue:
+----------------------------
+
+--if on the 4th month we did not get the pocket money:
+
+var amount_in_pb = 1000;
+var month_count =1;
+
+
+while(amount_in_pb <= 60000)
+{
+
+if(month_count == 4)
+{
+month_count++; // update the month count and skip the furtur iteration for this cycle.
+continue;
+}
+
+console.log("Keeping 10000 inside the piggy bank");
+
+amount_in_pb = amount_in_pb + 10000;
+
+console.log("Final amount after the month: "+month_count++, amount_in_pb);
+
+
+} 
+
+continue coding example another analogy:
+----------------------------------------
+
+--In amazon shopping app there are 5000 prime customer.
+
+--And amazon decided to give 100/- cashback to all the customers.
+
+
+var number_of_prime_customer = 50;
+var customer_id=1;
+
+while(customer_id <= number_of_prime_customer){
+
+console.log("Giving 100 Rupee cash back", customer_id);
+
+customer_id++;
+}
+
+
+
+
+
+
+Now --And amazon decided to give 100/- cashback to all the customer exception those they are using ICICI credit card.
+
+imagine customer 4,10, 20, 25 using the ICICI bank credit card..
+
+
+var number_of_prime_customer = 50;
+var customer_id=1;
+
+while(customer_id <= number_of_prime_customer){
+
+if(customer_id === 4 || customer_id === 10 || customer_id === 20 || customer_id === 25)
+{
+console.log("Customer using ICICI credit card.. so no discount", customer_id);
+customer_id++; //update the customer count
+continue; // skip the furthur execution
+}
+
+console.log("Giving 100 Rupee cash back", customer_id);
+
+customer_id++;
+}
+
+
+Example: printing all the even numbers from 0 to 20;
+
+var num=0; 
+
+while(num <= 20)
+{
+	if(num % 2 === 0)
+	{
+		console.log("even numbers", num);
+	}
+num++;
+
+}
+
+
+
+Example: Skipping the Odd numbers:
+
+
+var num=0; 
+
+while(num <= 20)
+{
+
+if(num % 2 !== 0)
+{
+num++;
+console.log("Skipping Odd numbers");
+continue;
+}
+console.log("even numbers", num);
+
+num++;
+
+}
+
+
+
+Q/- print the avarage of even numbers from 1 to 100.
+
+
+var start = 1;
+var limit = 100;
+var sum = 0;
+var count =0;
+
+while(start <= limit)
+{
+
+//find the even numbers
+if(start % 2 === 0)
+{
+
+//counting how many numbers are even
+count++;
+
+sum = sum + start;
+
+
+}
+
+
+start++;
+
+} 
+
+
+var avg = sum/count;
+
+
+console.log("Total numbers of even are: ",count);
+console.log("Sum is : ",sum);
+console.log("The Avarage is :",avg);
+
+
+For Loop:
+==========
+
+--it is similar to while loop.
+
+--repeting the task multiple time.
+
+--there are some difference where we can use while loop and where we can use for loop.
+
+--any loop as 4 part:
+
+1. intial value: from where we want to start the loop
+2. condition: till where this loop will run.
+3. actual taks: 
+4. increment or decrement.
+
+for loop syntax:
+-----------------
+
+for(initialization;condition;increment/decrement)
+{
+
+//actual code.
+
+}
+
+
+
+
+
+
+
+example1: printing Hello world 5 times using while loop:
+
+
+
+var i = 1;
+
+while(i <=5)
+{
+console.log("Hello World");
+i++;
+}
+
+
+example2: printing Hello world 5 times using for loop:
+
+
+for(var i=1;i<=5;i++)
+{
+	console.log("Hello World");
+}
+
+
+
+
+sequence of execution:
+----------------------
+
+1. initialization
+2. condition
+3. actual code
+4. increment or decrement
+
+
+2,3,4: 2,3,4: 2,3,4 ... till the condtion become false
+
+
+Note: Another way to write the for loop:
+
+var i =1;
+
+for(;i<=5;)
+{
+	console.log("Hello World");
+	i++;
+}
+
+
+Example: Printing 1 to 10 using for loop:
+-----------------------------------------
+
+for(var i=1;i<=10;i++)
+{
+	console.log(i);
+}
+
+
+Example: Printing 1 to 5: 12345
+---------------------------------
+
+var bag="";
+
+for(var i=1;i<=5;i++)
+{
+	bag = bag+i;
+}
+
+console.log(bag);
+
+
+
+String concatanation:
+---------------------
+example1:
+
+var i = 1+2;
+console.log(i); //3
+
+
+example2:
+
+var i = 1+" 2";
+console.log(i); //1 2
+
+example3:
+
+var bag="";
+
+for(var i=1;i<=5;i++)
+{
+	bag = bag+i;
+	console.log(bag);
+}
+
+output:
+1
+12
+123
+1234
+12345
+
+example4:
+
+var bag=0;
+
+for(var i=1;i<=5;i++)
+{
+	bag = bag+i;
+}
+
+console.log(bag);
+
+output: 15
+
+
+example5:
+
+var bag=0;
+
+for(var i=1;i<=5;i++)
+{
+	bag = bag+i;
+
+	console.log(bag);
+
+}
+
+
+
+output:
+1
+3
+6
+10
+15
+
+Reversing the loop: printing 5 to 1:
+------------------------------------
+example1:
+
+for(var i = 5; i>=1;i--)
+{
+console.log(i);
+}
+
+output:
+5
+4
+3
+2
+1
+
+example2: accumulation
+
+var bag="";
+
+for(var i = 5; i>=1;i--)
+{
+	bag = bag+i+" ";
+}
+
+console.log(bag);
+
+output:
+5 4 3 2 1
+
+
+Example: Getting the factorial of 5:  5 * 4 * 3 * 2 * 1
+
+var result=1;
+
+for(var i=5; i>=1;i--)
+{
+	result = result * i;
+}
+
+console.log(result);
+
+output: 120
+
+another way: 1 * 2 * 3 * 4 * 5
+------------
+
+var fact = 1;
+
+for(var i=1;i<=5;i++)
+{
+fact = fact * i;
+}
+
+console.log(fact);
+
+output: 120
+
+
+
+Home Assignment
+===============
+1. Printing 1 to 5 using for loop in the following format: 12345
+
+2. finding the factorial of a given number using for loop
+
+3. printing all the even numbers from 10 to 40 except 20 and 30.
+
+4. printing 100 to 80 (reverse loop) using for loop
+
+5. finding the sum of first 50 numbers.
+
+6. printing all the odd numbers and even numbers with message between 20 to 50.
+
+7. printing 20 to 30 using infinite while loop.
+
+
+
+
+
+Break and Continue:
+====================
+
+example1:
+
+for(var guest = 1;guest <=10; guest++)
+{
+
+	console.log("guest got the train",guest);
+
+}
+
+example2:
+
+for(var guest = 1;guest <=10; guest++)
+{
+	if(guest == 3)
+	{
+		console.log("Train Gone..");
+		break;
+	}
+
+console.log("guest got the train",guest);
+
+}
+
+
+
+example3:
+
+for(var guest = 1;guest <=10; guest++)
+{
+	if(guest == 3)
+	{
+		console.log("Guest is sick..",guest);
+		continue;
+	}
+
+console.log("guest got the train",guest);
+
+}
+
+
+Pridict the output:
+===================
+
+var count = 1;
+
+for(var i=1; i<10; i++)
+{
+
+	if(i === 5)
+	{
+		continue;
+	}
+
+count++;
+
+}
+
+console.log(count);
+
+
+
+for loop another syntax:
+=========================
+
+for(;;) // all the three part is optional. and second part is by default true.
+{
+
+}
+
+
+printing 1 to 10 using for loop:
+
+example1:
+
+var i =1;
+
+for(;i<=10;i++)
+{
+	console.log(i);
+}
+
+console.log("bye");
+
+
+example2:
+
+var i =1;
+
+for(;;)
+{
+	console.log(i);
+
+	i++;
+
+}
+
+console.log("bye");
+
+
+example3:
+
+var i =1;
+
+for(;;)
+{
+
+	console.log(i);
+
+
+	if(i == 10)
+	{
+		break;
+	}
+
+i++;
+
+}
+
+console.log("bye");
+
+
+example: print the square of all the even number and cube for all the odd numbers from 1 to 10:
+
+option1:
+
+for(var i=1;i<=10;i++)
+  {
+    if(i % 2 === 0){
+      console.log(i ** 2);
+    }
+    else
+    {
+      console.log(i ** 3);
+    }
+  }
+
+option2:
+
+
+for(var i=1;i<=10;i++)
+{
+
+i % 2 === 0? console.log(i ** 2): console.log(i ** 3); 
+
+    
+}
+
+option3:
+
+for(var i=1;i<=10;i++)
+{
+  console.log(i % 2 == 0? i ** 2 : i ** 3);
+}
+
+
+
+
+Example: WAP to find total number of digits in a number:
+
+
+
+Note: parseInt() function can also be used to truncate the decimal point values.
+
+example:
+
+var x = 100.55;
+
+console.log(parseInt(x));//100
+
+
+ex:
+
+var x= 5/2;
+
+console.log(x); //2.5
+console.log(parseInt(x)); //2
+
+
+
+
+
+
+
+
+
+var num = 200006;
+
+var dc = 0;
+
+if(num === 0)
+{
+  dc++;
 }
 else
 {
-console.log("Welcome user");
-
+for(var i =num;i !==0 ; i = parseInt(i/10))
+  {
+    
+    dc++;
+  }
 }
 
+console.log(dc);
 
 
-checking a number, whether it is positive, negative or zero:
-===========================================================
+dry run:
 
-var num = -1;
+200006/10 = 20000.6 = parseInt==> 20000
 
-if( num > 0)
-{
-  console.log("number is positive");
-}
-else if(num < 0)
-{
-  console.log("number is negetive");
+20000/10 = 2000
+
+2000/10 = 200
+
+200/10 = 20
+
+20/10 = 2
+
+2/10 = 0.2  parseInt ==> 0
+
+
+
+using while loop:
+-----------------
+
+var num = 20006;
+var dc = 0;
+
+if(num == 0){
+	dc++
 }
 else
 {
-  console.log("number is zero");
+	while(num != 0)
+	{
+		dc++;
+		num = parseInt(num/10);
+	}
+}
+console.log(dc);		
+
+
+Example: WAP to find sum of digits in a number:
+
+2561 = 14
+
+ 
+
+
+var num = 1876;   //22
+var sum = 0;
+
+while(num != 0){
+
+	var last_digit = num % 10;
+
+	sum = sum + last_digit;
+
+	num = parseInt(num/10);
 }
 
+console.log("The sum of digit is " + sum);
+
+
+using for loop:
+---------------
+
+var num = 1876;
+var sum = 0;
+
+for(var n = num; n != 0; n = parseInt(n/10)){
+	sum = sum + n % 10;
+}
+
+
+console.log("The sum of digit is " + sum);
+
+
+
+Q/- WAP to reverse a given number.
+
+var num = 1234;   //4321
+
+var bag = ""; 
+
+
+for(var i = num; i != 0; i = parseInt(i/10))
+{
+
+var last_num = i % 10;  12 
+
+bag =bag+last_num;   //"4321"
+
+
+}
+
+console.log(bag);
+
+
+
+
+
+Nested Loops:
+============
+
+
+
+
+
+Case 1: printing the "Hello World" 5 times..
+
+
+for(var i=1; i<=5;i++)
+{
+	console.log("Hello World",i);
+}
+
+
+Now what if we need to run this entire for-loop 3 times.
+
+--in this case we can take another loop which will run 3 times.
+
+example:
+
+
+for(var j=1; j<=3; j++)
+{
+
+	for(var i=1; i<=5;i++)
+	{	
+		console.log("Hello World",j,i);
+	}
+
+//console.log("\n");
+
+}
+
+
+output:
+
+1 1
+1 2 
+1 3
+1 4
+1 5
+
+2 1
+2 2
+2 3
+2 4
+2 5
+
+3 1 
+3 2
+3 3
+3 4
+3 5
+
+
+
+
+
+Note: As we can use nesed if-else, similarly we can use nested loops..
+
+example1: for inside for
+
+//outer loop
+for(initialization; condition; incr/decr)
+{
+	//actual code for outer loop
+	
+	//inner loop
+	for(initialization; condition; incr/decr)
+	{
+		//actual code for inner loop
+	}
+
+
+}
+
+
+example2: while inside another for
+
+//outer loop
+for(initialization; condition; incr/decr)
+{
+
+	//actual code for outer loop
+
+	//inner loop
+	initilization
+	while(condition)
+	{
+		//actual code for inner loop
+		incre/decr;
+	}
+
+
+}
+
+
+example3: while inside while
+
+//outer loop
+initialization
+while(condition)
+{
+
+	//actual code for outer loop
+
+	//inner loop
+	initialization
+	while(condition)
+	{
+		//actual code for inner loop
+		//incre/decre
+	}
+
+	incre/decre;
+}
+
+
+example4: for inside while
+
+//outer loop
+initialization
+while(condition)
+{
+
+	//actual code for outer loop
+
+	//inner loop
+	for(initialization; condition; incr/decr)
+	{
+		//actual code for inner loop
+	}
+
+	incre/decre;
+}
+
+
+Use-case of nested for-loop:
+============================
+
+suppose 1 bowler bowl 6 time in an over..so there will be a loop that will run 6 times.
+
+
+
+for(var i=1; i<=6; i++)
+{
+
+	console.log("bowler ball",i);
+
+} 
+
+now if it is a t20 match then 20 bowlers needs to run this loop..
+
+
+//outer loop 20 times
+for(var j=1; j<=20; j++)
+{
+
+	console.log("Start the over ",j);
+
+	//inner loop 6 times
+	for(var i=1; i<=6; i++)
+	{
+
+		console.log("bowler ball",i);
+	}
+
+	console.log("End the over", j);
+}
+
+
+
+
+
+
+Excercise: one golgapa shopkeeper giving 6 golgapas to each person, now he need to give the golgapas to 5 people.
+
+
+
+
+
+for(var people=1; people<=5;people++)
+{
+
+	console.log("Start the People ",people);
+
+	for(var golgapa=1; golgapa<=6; golgapa++)
+	{
+		console.log("Golgapa ",golgapa);
+	}
+
+	console.log("End of People ",people);
+
+} 
+
+
+--here for each people the inner loop will run from the begining till inner loop ends.
+
+
+
+printing golgapas in a form of matrix:
+--------------------------------------
+
+1 person 6 golgapa: 
+
+for(var p=1; p<=5;p++)
+{
+	var box="";
+
+	for(var g=1; g<=6; g++)
+	{
+		box= box+g+"Golgapa ";   
+	}
+
+
+console.log(box);
+
+//console.log("End of People ",p);
+
+} 
+
+
+
+Quiz/- what will happen if we define the box out side the first loop ?
+
+--here we are not empting the box after each iteration of outer loop..so the previous values will be persisted after each iteration of outer loop.
+
+
+
+Excersise:
+===========
+
+Imagine you are a farmer and you need to put 10 seed * in a flat field in horizontal manner:
+
+
+var bag="";
+
+for(var seed=1; seed<=10; seed++)
+{
+	bag = bag+"* ";
+}
+
+console.log(bag);  // 
+
+Now we need to put seeds in the similar manner in 5 similar fields:
+
+
+for(var field=1; field<=5; field++)
+{
+
+
+	var bag="";
+	
+	for(var seed=1; seed<=10; seed++)
+	{
+		bag = bag+"* ";
+	}
+
+	console.log(bag);
+
+}
+
+
+output:
+-------
+* * * * * * * * * * 
+* * * * * * * * * *
+* * * * * * * * * *
+* * * * * * * * * *
+* * * * * * * * * *
+
+
+
+Example 2: we need to put 1 seed in 1st field, 2 seed in 2nd field, 3 seed in 3rd field 4 seed in fourth field, 5 seed in 5th field.
+
+*
+* *
+* * *
+* * * *
+* * * * *
+
+
+for(var field=1; field<=5; field++)
+{
+
+
+	var bag="";
+
+	for(var seed=1; seed<=field; seed++)
+	{
+		bag = bag+"* ";
+	}
+
+	console.log(bag);
+
+}
+
+
+Example 3: we need to put:
+
+5 seed in 1st field
+4 seed in 2nd field
+3 seed in 3rd field
+2 seed in 4th field
+1 seed in 5th field
+
+
+for(var field=1; field<=5; field++)
+{
+
+
+	var bag="";
+
+	for(var seed=5; seed>=field; seed--)
+	{
+		bag = bag+"* ";
+	}
+
+	console.log(bag);
+
+}
+
+
+output:
+
+* * * * *
+* * * * 
+* * *
+* * 
+*
+
+
+
+
+another way: starting from 5th field
+-------------
+
+for(var field=5; field>=1; field--)
+{
+
+
+	var bag="";
+
+	for(var seed=1; seed<=field; seed++)
+	{
+		bag = bag+"* ";
+	}
+
+	console.log(bag);
+
+}
+
+
+
+
+
+Example 4: print the following format:
+
+1 2 3 4 5 6
+1 2 3 4 5 6
+1 2 3 4 5 6
+1 2 3 4 5 6
+
+
+--here 4 row and 6 column..
+
+--outer loop will run 4 times and inner loop will run 6 times..
+
+
+for(var field=1; field<=4; field++)
+{
+
+
+	var bag="";
+	for(var seed=1; seed<=6; seed++)
+	{
+		bag = bag+seed+" ";
+	}
+
+	console.log(bag);
+
+}
+
+
+Note: at the time of whole 1st inner loop i.e 1 2 3 4 5 6 the outer loop(field value) is 1
+similarly for the second inner loop 1 2 3 4 5 6 the outer loop (field value) is 2. 
+
+
+
+Example 5:
+
+print the following format:
+
+1 1 1 1 1 1
+2 2 2 2 2 2
+3 3 3 3 3 3 
+4 4 4 4 4 4
+
+
+--here 4 row and 6 column..
+
+--outer loop will run 4 times and inner loop will run 6 times..
+
+
+for(var x=1; x<=4; x++)
+{
+
+
+	var bag="";
+
+	for(var y=1; y<=6; y++)
+	{
+		bag = bag+x+" ";
+	}
+
+	console.log(bag);
+
+}
+
+
+
+Example 4: print the following format:
+
+1
+1 2
+1 2 3 
+1 2 3 4
+1 2 3 4 5 
+
+
+
+
+
+
+for(var x=1; x<=5; x++)
+{
+
+
+	var bag="";
+	
+	for(var y=1; y<=field; y++)
+	{
+		bag = bag+y+" ";
+	}
+
+	console.log(bag);
+
+}
+
+
+Example 5: print the following format:
+
+1 2 3 4 5
+1 2 3 4
+1 2 3 
+1 2
+1
+
+
+
+for(var x=1; x<=5; x++)
+{
+
+
+var bag="";
+
+	for(var y=1; y<= 6-x; y++)
+	{
+		bag = bag+y+" ";
+	}
+
+	console.log(bag);
+
+}
+
+
+another way:
+------------
+
+for(var i=5; i>=1; i--)
+{
+
+
+	var bag="";
+
+	for(var j=1; j<=i; j++)
+	{
+		bag = bag+j+" ";
+	}
+
+	console.log(bag);
+
+}
+
+
+example6:
+
+print the following patter:
+
+*
+* * 
+* * * 
+* * * *
+* * * * *
+* * * *
+* * *
+* * 
+*
+
+
+combine the above examples:
+
+
+for (var field = 1; field <= 5; field++) {
+
+
+  var bag = "";
+  for (var seed = 1; seed <= field; seed++) {
+    bag = bag + "* ";
+  }
+
+  console.log(bag);
+
+}
+
+
+for(var field=5; field>=1; field--)
+{
+
+
+var bag="";
+for(var seed=1; seed<=field; seed++)
+{
+bag = bag+"* ";
+}
+
+console.log(bag);
+
+}
+
+
+to make arrow sharp of above pattern(start the outer loop for the second part from 4):--
+
+
+
+for (var field = 1; field <= 5; field++) {
+
+
+  var bag = "";
+  for (var seed = 1; seed <= field; seed++) {
+    bag = bag + "* ";
+  }
+
+  console.log(bag);
+
+}
+
+
+for(var field=4; field>=1; field--)
+{
+
+
+var bag="";
+for(var seed=1; seed<=field; seed++)
+{
+bag = bag+"* ";
+}
+
+console.log(bag);
+
+}
+
+
+
+another way: using only one nested for-loop:
+---------------------------------------------
+
+
+var k = 1;
+
+for (var x = 1; x <= 9; x++) {
+
+
+
+
+  var bag = "";
+  for (var y = 1; y <= k; y++) {
+    bag = bag + "* ";
+  }
+
+
+  x <=4 ? k++ : k--;
+
+
+
+
+  console.log(bag);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+example7: print the following pattern:
+
+5 4 3 2 1 
+5 4 3 2
+5 4 5
+5 4
+5
+
+
+
+
+for(var x=1; x<=5; x++)
+{
+
+
+	var bag="";
+
+	for(var y=5; y>=x; y--)
+	{
+		bag = bag+y+" ";
+	}
+
+	console.log(bag);
+
+}
+
+
+
+another way:
+-----------
+
+for(var x=5; x>=1; x--)
+{
+
+
+	var bag="";
+
+	for(var y=5; y>=6-x; y--)
+	{
+		bag = bag+y+" ";
+	}
+
+	console.log(bag);
+
+}
+
+
+
+break and continue in nested loop:
+----------------------------------
+
+
+--break is used to break the loop and come out from the loop.
+
+--in case of nested loop, it will break the inner loop and come out from the inner loop.but not from the outer loop.
+
+--similarly continue will only skip the iteration of the inner loop.but not skip the iteration of the outer loop.
+
+
+
+example:
+
+for(var i=1; i<=5; i++)
+{
+
+	for(var j=1; j<=5; j++)
+	{
+
+		console.log("i= ",i, "j= ",j);
+
+	}
+
+
+}
+
+
+using break inside the inner loop:
+----------------------------------
+
+for(var i=1; i<=5; i++)
+{
+
+	for(var j=1; j<=5; j++)
+	{
+		if(j == 3)
+		{
+			break;
+		}
+		console.log("i= ",i, "j= ",j);
+		
+	}
+
+
+}
+
+
+
+using break inside the outer loop:
+----------------------------------
+
+for(var i=1; i<=5; i++)
+{
+
+	if(i == 3)
+	{
+		break;
+	}
+
+	for(var j=1; j<=5; j++)
+	{
+	
+		console.log("i= ",i, "j= ",j);
+		
+	}
+
+
+}
+
+
+using continue inside the inner loop:
+------------------------------------
+
+for(var i=1; i<=5; i++)
+{
+
+	for(var j=1; j<=5; j++)
+	{
+		if(j == 3)
+		{
+			continue;
+		}
+		console.log("i= ",i, "j= ",j);
+		
+	}
+
+
+}
+
+
+
+using continue inside the outer loop:
+-------------------------------------
+
+for(var i=1; i<=5; i++)
+{
+
+	if(i == 3)
+	{
+		continue;
+	}
+
+	for(var j=1; j<=5; j++)
+	{
+	
+		console.log("i= ",i, "j= ",j);
+		
+	}
+
+
+}
+
+
+
+
+ Excersice: Print the calandar in the following format:
+
+Month 1: Day 1
+Month 1: Day 2
+Month 1: Day 3
+--
+--
+Month 2: Day 1
+Month 2: Day 2
+Month 2: Day 3
+--
+--
+Month 12: day 1
+--
+Month 12: day 31
+
+
+
+
+solution1: 
+
+for(var month=1; month<=12; month++)
+{
+
+	for(var day=1; day<=31; day++)
+	{
+
+		console.log("Month ",month, ":", "Day ",day);
+
+	}
+
+}
+
+
+solution2: improved
+
+
+
+for(var month=1; month<=12; month++)
+{
+
+	var day_value=31
+	
+
+	if(month == 2)
+	{
+		day_value=28;
+	}
+	else if(month == 4 || month == 6 || month == 9 || month == 11 )
+	{
+		day_value=30;
+	}
+
+
+	for(var day=1; day<=day_value; day++)
+	{
+
+		console.log("Month ",month, ":", "Day ",day);
+
+	}
+
+}
+
+ 
+
+solution3: beautify1
+
+
+for(var month=1; month<=12; month++)
+{
+
+	var day_value=31
+	
+
+	if(month == 2)
+	{
+		day_value=28;
+	}
+	else if(month == 4 || month == 6 || month == 9 || month == 11 )
+	{
+		day_value=30;
+	}
+
+
+	switch(month)
+	{
+
+		case 1: 
+			console.log("***January***");
+			break;
+			
+		case 2: 
+			console.log("***February***");
+			break;
+		case 3: 
+			console.log("***March***");
+			break;
+		case 4: 
+			console.log("***April***");
+			break;
+
+		default: 
+			console.log("***Other Month****");
+			break;
+	}
+
+
+
+	for(var day=1; day<=day_value; day++)
+	{
+
+		console.log("Month ",month, ":", "Day ",day);
+
+	}
+
+}
+
+
+
+solution4: beautify2
+
+
+for(var month=1; month<=12; month++)
+{
+
+	var day_value=31
+	var month_name;
+
+	if(month == 2)
+	{
+		day_value=28;
+	}
+	else if(month == 4 || month == 6 || month == 9 || month == 11 )
+	{
+		day_value=30;
+	}
+
+
+	switch(month)
+	{
+
+		case 1: 
+			month_name = "January";
+			break;
+		case 2: 
+			month_name = "February";
+			break;
+		case 3: 
+			month_name = "March";
+			break;
+		case 4: 
+			month_name = "April";
+			break;
+
+		default: 
+			month_name = "Other Month";
+			break;
+	}
+
+
+
+	for(var day=1; day<=day_value; day++)
+	{
+
+		console.log(month_name, ":", "Day ",day);
+
+	}
+
+	console.log("\n");
+
+}
+
+
+
+
+Example: Checking if a given number if prime number or not.
+
+Note: A prime number is a number which has only 2 divisor (i.e 1 and that number itself)
+
+1 is not a prime number, because it has only 1 divisor.
+
+ex:
+
+2, 3, 5, 7, 11, 13, 17, 19, ...
+
+
+var given_number = 51;
+
+var isPrime = true;
+
+for(var i=2; i< given_number; i++)
+{
+	if(given_number % i ===0  )
+	{
+		isPrime = false;
+		break;
+	}
+}
+
+if(isPrime)
+{
+	console.log("Given number is a prime");
+}
+else
+{
+	console.log("Given number is not prime");
+}
+
+
+
+Example : find all the prime numbers from 2 to the given limit.
+
+
+var limit = 20;
+
+for(var gn=2; gn<= limit; gn++){
+
+	var isPrime = true;
+
+	for(var i=2; i< gn; i++)
+	{
+
+		if(gn % i ===0  )
+		{
+			isPrime = false;
+			break;
+		}
+	}
+
+	if(isPrime)
+	{
+		console.log("prime number: ",gn);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+do-while loop:
+--------------
+
+
+--in while or for loop, there may be a chance that the body of the loop may execute 0 number of time. 
+
+--if we want to execute our loop code at-least one time irrespective of the condition then we can use the do-while loop.
+
+--while and for loops are the pre-condition check loop where as do-while is the post condtion check loop.
+
+
+syntax:
+
+initialization
+
+do
+{
+//actual code
+
+incre/decr;
+
+}
+while(condition);
+
+
+example:
+
+
+example: difference between while and do-while:
+
+
+var count = 10;
+
+// Using while loop
+
+console.log("Using while loop:");
+while (count < 5) {
+    console.log("Count using while loop: " + count);
+    count++;
+}
+
+
+
+
+// Using do-while loop
+var count = 10;
+console.log("Using do-while loop:");
+do 
+{
+    console.log("Count using do-while loop: " + count);
+    count++;
+} while (count < 5);
+
+
+
+
+
+
+example:
+
+
+var count =1;
+
+do
+{
+console.log(count);
+count++;
+}
+while(count <=5);
+
+
+--here even though the condition is false, but still our code will execute at-least one time.
+
+
+example: Guess the output:
+
+what is output of following code
+
+var a = 5;
+
+do
+{
+	console.log(a);
+	a+=5;
+
+
+}
+while(a <= 5); 
+
+console.log("Bye");
 
 
 
