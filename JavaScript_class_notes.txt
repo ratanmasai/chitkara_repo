@@ -5046,7 +5046,7 @@ console.log(numbers);
 
 or 
 	     0       1   2     3             4             5   6      7    8      9
-var arr = ["hello", 10, 20, "welcome", "sage university", 50, true, true, false, "hi"];
+var arr = ["hello", 10, 20, "welcome", "Chitkara university", 50, true, true, false, "hi"];
 
 console.log(arr);
 
@@ -5963,22 +5963,22 @@ console.log(arr); // ['M','A','G','E']
 
 example:
 
-let str = "SAGE";
+let str = "Chitkara";
 
 str[0]='M';
 
-console.log(str); //SAGE 
+console.log(str); //Chitkara 
 
 
 example: 
 
-let str = "SAGE";  //str is pointing to an object that has content SAGE
+let str = "Chitkara";  //str is pointing to an object that has content Chitkara
 
-str[0] = 'C';  //No change because String is Immutable
+str[0] = 'M';  //No change because String is Immutable
 
-console.log(str); // SAGE
+console.log(str); // Chitkara
 
-str = "University";  //okay, now str is not pointing to object that contains SAGE but it points to another object that has content University because Immutability means you cannot make changes in the existing object but the variable may point to another object.
+str = "University";  //okay, now str is not pointing to object that contains Chitkara but it points to another object that has content University because Immutability means you cannot make changes in the existing object but the variable may point to another object.
 
 console.log(str); //University
 
@@ -5997,7 +5997,7 @@ console.log(str1);
 
 Approach1:
 
-let str = "SAGE";
+let str = "Chitkara";
 
 let arr=[];
 
@@ -6006,7 +6006,7 @@ for(let i = 0;i<str.length;i++)
 	arr.push(str[i]);
 }
 
-arr[0] = 'C';
+arr[0] = 'M';
 
 
 
@@ -6025,7 +6025,7 @@ console.log(str);
 Approach2:
 
 
-let str = "SAGE"
+let str = "Chitkara"
 let bag = "";
 
 
@@ -6034,7 +6034,7 @@ for(let i=0;i<str.length;i++)
 
 	if(str[i] === 'S')
 	{
-		bag= bag+'C';
+		bag= bag+'M';
 	}
 	else
 	{
@@ -6042,8 +6042,8 @@ for(let i=0;i<str.length;i++)
 	}
 }
 
-console.log(str); // SAGE
-console.log(bag); // CAGE
+console.log(str); // Chitkara
+console.log(bag); // Mhitkara
 
 
 
@@ -6053,16 +6053,16 @@ Approach3:
 
 example:
 
-let str = "SAGE";
+let str = "Chitkara";
 
-str.replace('S','C');
+str.replace('C','M');
 
-console.log(str); // SAGE
+console.log(str); // Chitkara
 
-let newStr = str.replace('S','C');
+let newStr = str.replace('C','M');
 
-console.log(str); // SAGE
-console.log(newStr); // CAGE
+console.log(str); // Chitkara
+console.log(newStr); // Mhitkara
 
 
 
@@ -6157,7 +6157,7 @@ for(let j=0;j<str.lenght;j++)
 
 
 
-Q/- Given a String sentance, count the number of word in that Sentance.
+Q/- Given a String sentence, count the number of word in that Sentence.
 
 A/-
 
@@ -6213,7 +6213,7 @@ else
 length property:
 ----------------
 
-console.log("SAGE".length);	//4
+console.log("Chitkara".length);	//8
 console.log("Masai".length);	//5
 console.log("".length);		//0
 console.log(' '.length);	//1
@@ -6282,11 +6282,11 @@ console.log(str2); //Welcome
 
 example2:
 
-let str1= "  Welcome to Sage ";
+let str1= "  Welcome to Chitkara ";
 let str2 =str1.trim();
 
-console.log(str1);// "  Welcome to Sage "
-console.log(str2);//Welcome to Sage
+console.log(str1);// "  Welcome to Chitkara "
+console.log(str2);//Welcome to Chitkara
 
 
 
@@ -6391,8 +6391,8 @@ Sample input: NAMAN
 Sample Output: NAMAN is a palindrome String
 
 2. WAP to check to segragate vowels on the left hand side and consonants on right hand side of a String.
-Sample input: SAGE
-Sample Output: AESG
+Sample input: Chitkara
+Sample Output: araktihC
 
 3. WAP to remove duplicate charecters from a given string.
 Sample input: AABABCCDAB
@@ -6552,7 +6552,7 @@ Note: inside a function, if we create any variable using let keyword that variab
 example:
 
 
-let name = "Sage university";
+let name = "Chitkara university";
 
 function greet()
 {
@@ -7069,7 +7069,7 @@ getVowelArray("Welcome"); //here we loose the returned value
 let result = getVowelArray("Welcome"); 
 console.log(result);
 
-console.log(getVowelArray("Sage University"));
+console.log(getVowelArray("Chitkara University"));
 
 
 function doAddition(n1,n2){
@@ -8519,11 +8519,6 @@ console.log("the selling price is " + product.calculate());
 Output:
 the selling price is 740
 
-
-
-
-
-*********************************************
 
 
 
