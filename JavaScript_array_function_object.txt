@@ -1,0 +1,3888 @@
+
+
+Array:
+========
+
+
+var name1="ram";
+var name2="shyam";
+--
+--
+
+
+
+
+--if we want to store 1000 names then we should not declare 1000 diff variables.
+
+amazon example:
+
+var product1="mobile";
+var product2="earphone";
+--
+--
+
+Do the same for 50 products
+Do the same for 4000 products; use of conventional approach is impractical
+
+
+--the solution is array..
+
+--array is a data-structure that represents collection of elements
+
+--array is the continuous part of memory location that store multiple values.
+
+
+- first element of an array is available at index 0 and the last element is available at index n - 1 where n is the number of elements in the array.
+
+50 
+
+0 <----> 49 
+
+
+
+
+
+syntax:
+
+var arr = []; //empty array
+
+example:
+
+var names=["Ram","mohan","shyam","hari"];
+
+console.log(names);
+
+
+--Java script array can hold homogeneous or heterogeneous types of elements.
+
+example:
+
+
+var numbers = [10,20,70,40,30,55,44];
+
+console.log(numbers);
+
+or 
+	     0       1   2     3             4             5   6      7    8      9
+var arr = ["hello", 10, 20, "welcome", "Chitkara university", 50, true, true, false, "hi"];
+
+console.log(arr);
+
+--array stores the elements on 0 based index.
+
+example:
+	       0      1      2        3
+var names = ["Ram","Shyam","mohan","hari"]; 
+
+console.log(names[0]); // Ram
+console.log(names[1]); // Shyam
+console.log(names[2]); // mohan
+console.log(names[3]); // hari
+console.log(names[4]); // undefined 
+
+
+or
+
+for(var i=0;i<=3;i++)
+{
+	console.log("Welcome",names[i]);
+}
+
+ 
+
+length of an array:
+-------------------
+
+--inside an array, there is a property called "length" which will represent the size of an array(number of elements).
+example:
+
+console.log(names.length); // 4
+
+
+for(var i=0;i<names.lenght;i++)
+{
+	console.log(names[i]);
+}
+
+
+
+example:
+
+var trains = ["Rajdhani","Satabdi","duronto","garib rath","vande bharat"];
+
+//console.log("Total number of trains :",trains.length); //5
+
+or 
+
+var total_train = trains.length;
+
+console.log("Total number of trains :",total_train); //5
+
+
+example: printing the last train:
+
+console.log(trains[4]); //vande bharat
+
+but if the array of trains will be like as follows:
+
+
+var trains = ["Rajdhani","Satabdi","duronto","garib rath","vande bharat","vaishali exp"];
+
+then the trains[4]; // hardcoded value will gives the wrong answer.
+
+so the proper solution will be 
+
+var last_index= trains.length-1;
+
+console.log("Last Train is: ",trains[last_index]);
+
+
+
+Q:/ create an array of 7 vegitables, and print the last vegitable.
+
+
+
+
+
+inbuilt functions of an array:
+==============================
+
+1. push() and pop():
+--------------------
+
+push(): this function is used to add a new element(s) to an array at the last.
+
+example:
+
+var arr = []; // empty array
+
+arr.push("A");
+arr.push("B");
+arr.push("C", "D"); // we can push more than one elements also
+
+console.log(arr); //["A","B","C","D"];
+
+console.log(arr.length);// 4
+ 
+
+
+Q/- create an empty array of super heroes, and push 3 super hero in it, and print the last super hero.
+
+
+pop():
+------
+
+--it is used to delete the last element from an array, and this function will return the deleted element also.
+
+example:
+
+var names =["Ram","Shyam","Hari","Mohan"];
+
+console.log(names); //["Ram","Shyam","Hari","Mohan"];
+
+names.pop();
+
+console.log(names); //["Ram","Shyam","Hari"];
+
+var x= names.pop();
+
+console.log(x); // Hari
+console.log(names); ["Ram","Shyam"]
+
+
+Q/- Guess the output:
+
+var arr= [10,20,40,2,4,5,12,18];
+
+arr.pop();
+arr.pop();
+
+var a= arr.pop();
+
+arr.push(80);
+
+console.log(arr); // 
+console.log(a);//  
+
+
+
+updating the elements in an array:
+----------------------------------
+
+
+var superheros=["batman","superman","saktiman","ironman","thor"];
+
+console.log(superheros); //["batman","superman","saktiman","ironman","thor"];
+
+now change the batman to the hanuman and ironman to krishna:
+
+superheros[0]="hanuman";
+superheros[3]="krishna";
+
+console.log(superheros); //["hanuman","superman","saktiman","krishna","thor"];
+
+
+for(var i=0;i<superheros.length;i++)
+{
+	console.log(superheros[i]);
+}
+
+
+or
+
+for(var i=0;i<superheros.length;i++)
+{
+	console.log(i+1,superheros[i]);
+}
+
+
+
+Q/-
+
+var arr= [2,3,5,8,7,9,8]; // delete the last 3 items:
+
+
+A/-
+
+approach 1:
+
+arr.pop();
+arr.pop();
+arr.pop();
+
+
+approach2:
+
+for(var i=1;i<=3;i++)
+{
+arr.pop();
+}
+
+
+
+Q/-
+
+var movies = ["tiger3","pushpa","jawan","inception","bahubali","hera pheri"];
+
+print all the movies name except the "inception";
+
+
+
+
+
+A/-
+
+approach1:
+
+for(var i=0;i<movies.length;i++)
+{
+
+if(i == 3)
+{
+continue;
+}
+
+console.log(movies[i]);
+
+}
+
+
+approach2:
+
+
+for(var i=0;i<movies.length;i++)
+{
+
+if(movies[i] === "inception")
+{
+continue;
+}
+
+console.log(movies[i]);
+
+}
+
+
+
+Q/- print the last 3 elements of an array.
+
+var arr = ["A","B","X","M","Z","P","Q","S","N"];
+
+
+
+
+
+
+for(var i = arr.length-3; i< arr.length; i++)
+{
+
+	console.log(arr[i]);
+
+}
+
+
+--the above code will work if the elements inside the array is greater than or equal to 3. but if the elements inside an array is 2 then the output will be wrong: it should print all the elements.
+
+
+example
+
+ 
+var arr = ["A","B"];
+
+
+
+for(var i = arr.length-3; i< arr.length; i++)
+{
+
+	console.log(arr[i]);
+
+}
+
+output:
+
+undefined
+A
+B
+
+so the correct code will be
+
+
+var start = 0;
+
+if(arr.length >= 3)
+{
+	start = arr.length-3;
+}
+
+
+
+for(var i = start; i< arr.length; i++)
+{
+
+	console.log(arr[i]);
+
+}
+
+
+
+Example:
+
+
+
+
+var arr = [10,20,30,40];
+
+
+arr[0] = 10
+arr[1] = 20
+arr[2] = 30
+arr[3] = 40
+
+
+
+console.log(arr[1]); //20
+
+
+first element: 0th index
+
+last element: n-1 : where n is the number of elements inside an array.
+
+
+
+
+
+
+Q/- create an array of 5 subject marks of a student and print the total marks.
+
+A/-
+
+
+var marks = [80,40,55,45,75];
+
+var sum=0;
+
+for(var i =0;i<marks.length;i++)
+{
+sum = sum+marks[i];
+}
+
+
+console.log("Total marks is :",sum);
+
+
+
+Q/- finding the count of odd numbers and count of even numbers inside an array of numbers.
+
+
+var arr= [10,11,22,12,14,15,16,17,19,30,20];
+
+
+approach1:
+
+
+var oc=0;
+var ec=0;
+
+for(var i=0;i<arr.length;i++)
+{
+
+	if(arr[i] % 2 ===0)
+	{
+		ec++;
+	}
+	else
+	{
+		oc++;
+	}
+}
+
+
+console.log("Even count is: ",ec);
+console.log("Odd count is: ",oc);
+
+
+approach2:
+
+
+
+var oc=0;
+var ec=0;
+
+for(var i=0;i<arr.length;i++)
+{
+
+arr[i] % 2 === 0 ? ec++ : oc++;
+
+}
+
+
+console.log("Even count is: ",ec);
+console.log("Odd count is: ",oc);
+
+
+
+
+Q/- find the min element inside an array of numbers:
+
+
+var arr= [10,11,22,18,14,15,16,2,17,19,30,20];
+
+
+
+var min = arr[0];
+
+for(var i =1;i<arr.length;i++)
+{
+	if(arr[i] < min)
+	{
+		min = arr[i];
+	}
+
+}
+
+
+console.log("Minimum is :",min);
+
+
+
+
+
+
+
+
+
+Q/- find the min element and max element inside an array of numbers:
+
+
+var arr= [10,11,22,12,14,15,16,2,17,19,30,20];
+
+
+var min=arr[0];
+var max = arr[0];
+
+for(var i =1;i<arr.length;i++)
+{
+
+	if(arr[i] < min)
+	{
+		min= arr[i];
+	}
+
+	if(arr[i] > max)
+	{
+		max=arr[i];
+	}
+
+}
+
+console.log("Minimum is :",min);
+console.log("Maximum is :",max);
+
+Q/- Given an array of numbers, find out the average of all the even numbers.
+
+var arr = [45,42,85,82,90,95,98,96,97,77,76,76,74];
+
+
+*****************************************************************
+
+playing with array:
+-------------------
+
+Javascript array is a free size array..
+
+
+
+example1:
+
+var arr=[]; //empty array
+
+console.log(arr.length); //0
+
+arr[10] = "hello";
+
+console.log(arr.length);//11
+
+arr[12]="hi";
+
+console.log(arr); //
+
+console.log(arr.length);//13
+
+
+example2:
+
+
+other functions inside an array:
+=================================
+
+shift() and unshift():
+----------------------
+
+shift():
+--------
+
+--The shift() method removes the first array element and "shifts" all other elements to a lower index and returns the removed element.
+
+example:
+
+var arr = [10,12,3,12,1,5];
+
+arr.shift();
+arr.shift();
+
+console.log(arr); // [3,12,1,5]
+
+var x= arr.shift();
+
+console.log(arr); // [12,1,5]
+console.log(x); // 3
+
+
+unshift(-):
+---------
+
+--The unshift(-) method adds a new element to an array (at the beginning), and "unshifts" older elements.
+
+example:
+
+
+var arr = [10,12,3,12,1,5];
+
+arr.unshift(50);
+
+console.log(arr); // [50,10,12,3,12,1,5]
+
+
+--using unshift() function we can add any number of elements at the begining.
+
+example:
+
+var arr = [10,12,3];
+
+arr.unshift(50,40,15);
+
+console.log(arr); // [50,40,15,10,12,3]
+
+
+splice(---) and slice() function:
+----------------------------------
+
+
+splice(---):
+------------
+
+The splice() method can be used to add/remove/transform new items to an array.
+- The first parameter is the index where it will start
+- The second parameter is the number of elements to be deleted
+- The remaining parameters are the elements to be added // it is optional
+
+
+
+--this function will return the deleted elements inside another array.
+
+example:
+
+
+var arr = [10,12,3,12,1,5];
+
+arr.splice(1,2,55,60,65); 
+
+1: here at 1st location the elements will be started.
+
+2: two elements will be deleted: 12, 3
+
+55, 60, 65: will be added:
+
+console.log(arr); // [10,55,60,65,12,1,5]
+
+example2:
+
+
+var arr = [10,12,3,12,1,5];
+
+arr.splice(0,0,55,60,65); 
+
+
+0: elements will be started from the 0th location
+0: element will be deleted.
+55,60,65: will be added
+
+console.log(arr); // [55,60,65,10,12,3,12,1,5]
+
+
+Q/- 
+
+var arr = ["apple","banana","chery","oranges","mango"];
+
+delete one element at index 2: chery
+
+
+arr.splice(2,1);
+
+console.log(arr); //["apple","banana","oranges","mango"];
+
+
+// Add 'pineapple' and 'grape' at index 2
+arr.splice(2, 0, "pineapple", "grape");
+
+
+console.log(arr); //["apple","banana","pineapple","grape","oranges","mango"];
+
+// Replace 'pineapple' with 'strawberry' at index 2
+arr.splice(2, 1, 'strawberry');
+
+console.log(arr); //["apple","banana","strawbery","grape","oranges","mango"];
+
+
+example:
+
+var fruits = ['apple', 'banana', 'cherry', 'date'];
+
+// Extract elements from index 1 to 2 (inclusive)
+var extracted = fruits.splice(1, 2);
+
+console.log(fruits);     // Output: ['apple', 'date']
+console.log(extracted);  // Output: ['banana', 'cherry']
+
+
+
+slice():
+-------
+
+
+--The slice() function is used to extract a portion of an array without modifying the original array. 
+
+--It takes two parameters: the starting index and the ending index (exclusive) of the portion to be extracted.
+
+--if we don't give the ending index, then it will extract till end
+
+example:
+
+var fruits = ['apple', 'banana', 'cherry', 'date', 'strawberry'];
+
+// Extract elements from index 1 to 3 
+var slicedFruits = fruits.slice(1, 4);
+
+
+console.log(slicedFruits);  // Output: ['banana', 'cherry', 'date']
+console.log(fruits);         // ['apple', 'banana', 'cherry', 'date', 'strawberry'];
+
+
+example:
+
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// Extract elements from index 3 to the end
+var subarray = numbers.slice(3);
+
+console.log(subarray);  // Output: [4, 5, 6, 7, 8, 9]
+console.log(numbers);   // Original array is unchanged
+
+
+
+example: negetive index: it will start from reverse(end)
+	                                    
+var colors = ['red', 'orange', 'yellow', 'green', 'blue'];
+
+// Extract elements from the second-to-last element to the end
+let slicedColors = colors.slice(-2);
+
+console.log(slicedColors);  // Output: ['green', 'blue']
+console.log(colors);        // Original array is unchanged
+
+
+
+includes():
+----------
+
+
+--The includes() function returns true if an array contains a specified value. 
+--The includes() function returns false if the value is not found. 
+--The includes() function is case sensitive.
+
+
+
+array.includes(element, start)
+Start position Default is 0.
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.includes("Mango");	//true
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.includes("Banana",1);	//false
+
+
+
+indexOf():
+----------
+
+--it will return the index of the specified element inside an array.
+
+
+indexOf(item, start):
+
+item: The value to search for.
+start: Where to start the search. Default value is 0. 
+
+--if the item found then it will return its index otherwise will be return -1.
+
+example:
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var index = fruits.indexOf("Apple");	//2
+
+console.log(index);// 2
+
+example:
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var index = fruits.indexOf("pineapple"); //-1
+
+
+
+example:
+
+var fruits = ["Banana", "Orange", "Apple", "Mango", "Apple"];
+var index = fruits.indexOf("Apple", 3);	//4  // it will start from 3rd index
+
+
+--if start position is in negetive number then it will start the search from the end.
+
+example:
+
+
+var fruits = ["Banana", "Orange", "Apple", "Mango", "Apple"];
+var index = fruits.indexOf("Orange", -2);	//-1  // it will start from "Mango";
+
+var index = fruits.indexOf("Orange", -5);	//1  // it will start from "Banana";
+
+
+
+
+Q/- find out the frequency of an element inside a given array?
+
+A/-
+
+var arr = [5, 6, 7, 5, 9, 8, 5, 6, 8];
+
+var element = 5;
+
+var frequency = 0;
+
+for (var i = 0; i < arr.length; i++) 
+{
+    if (arr[i] === element) {
+        frequency++;
+    }
+}
+
+console.log("Frequency is: ", frequency);
+
+
+
+
+join(seperator):
+----------------
+
+The join() function returns an array as a string. Any separator can be specified. The default is comma (,).
+
+
+example:
+
+var arr = ["i","love","masai"];
+
+var x= arr.join();
+
+console.log(arr); //['i','love','masai']
+console.log(x); // i,love,masai
+
+var y= arr.join(" ");
+
+console.log(y); // i love masai
+
+var z= arr.join("::");
+
+console.log(z); // i::love::masai
+
+
+
+sort():
+-------
+
+--it will sort an array with natural sorting order.
+
+
+example:
+
+
+var arr = [5, 6, 7, 5, 9, 8, 5, 6, 8];
+
+arr.sort();
+
+
+console.log(arr); //[ 5, 5, 5, 6, 6, 7, 8, 8, 9]
+
+
+
+
+
+Q/- WAP to create an array from source array that contains distinct elements of the source array
+
+var src = [1, 2, 3, 1, 2, 3]
+var dest = [src[0]]; 1	//putting the first element inside the dest array
+
+for (var i = 1; i < src.length; i++) {
+  if (!dest.includes(src[i])) {
+    //you are hear means element in not in the array
+    dest.push(src[i]);
+  }
+}
+console.log(dest);
+
+
+another way:
+-----------
+
+var src = [1, 2, 3, 1, 2, 3];
+var dest = [];
+
+
+
+for (var i = 0; i < src.length; i++) {
+  if (dest.indexOf(src[i]) === -1) {
+    dest.push(src[i]);
+  }
+}
+
+console.log(dest);
+
+
+
+
+
+
+
+Playing with String:
+====================
+
+
+--A string is a sequence of characters enclosed in single or double quotes, and it's used to represent textual data.
+
+Example:
+
+let greeting = "Hello, world!";
+let name = 'Alice';
+
+
+
+
+example:
+
+let message = "Masai School";
+
+here message is a variable which is pointing to the String object.
+
+--this String object is a group of charecter.(space is also considered as a charecter).
+
+
+--String are internally works based on array concept:
+
+--so here 'M' charecter is sotored at the location message[0] and 'l' charecter is stored at message[11]
+
+Example:
+
+
+for(var i=0;i< message.length; i++)
+{
+	console.log(message[i]);
+}
+
+
+
+Difference between Array and String:
+------------------------------------
+
+example1:
+
+var arr = ["W","E","L","C","O","M","E"];
+var str = "WELCOME";
+
+
+
+console.log(arr[0]); // 'W'
+console.log(str[0]); // 'W'
+
+
+console.log(arr.length); // 7
+console.log(str.length); // 7
+
+
+console.log(arr); //["W","E","L","C","O","M","E"]
+console.log(str); //WELCOME
+
+
+
+
+
+example2: We can change the array elements by overwriting it.
+
+
+var arr = ["C","H","I","T","K","A","R","A"];
+
+
+arr[0]='M';
+
+console.log(arr); // ["M","H","I","T","K","A","R","A"]
+
+
+--But String are Immutable, meaning we can't change individual characters in the String. We can create a new String with the changes.
+
+
+example:
+
+var str = "Chitkara";
+
+str[0]='M';
+
+console.log(str); //Chitkara 
+
+
+example: 
+
+var str = "Chitkara";  //str is pointing to an object that has content Chitkara
+
+str[0] = 'M';  //No change because String is Immutable
+
+console.log(str); // Chitkara
+
+str = "University";  //okay, now str is not pointing to object that contains Chitkara but it points to another object that has content University because Immutability means you cannot make changes in the existing object but the variable may point to another object.
+
+console.log(str); //University
+
+
+
+--Strings can be created using single or double quotes. Double quotes are often used when we need to include a single quote within the string.
+
+example:
+
+vr str1 = "This is sachin's bag"  // here single quote is also considered as a single charecter.
+
+console.log(str1);
+
+
+--String is an immutable group of charecters, but we can mutate it by converting it into a seperate String:
+
+
+Approach1:
+
+
+var str = "Chitkara"
+var bag = "";
+
+
+for(var i=0;i<str.length;i++)
+{
+
+	if(str[i] === 'C')
+	{
+		bag= bag+'M';
+	}
+	else
+	{
+		bag = bag+str[i];
+	}
+}
+
+console.log(str); // Chitkara
+console.log(bag); // Mhitkara
+
+
+
+Approach2:
+
+--Inside a String object we have an inbuit function called: replace(--), it will replace only the first match charecter
+
+example:
+
+var str = "Chitkara";
+
+str.replace('C','M');
+
+console.log(str); // Chitkara
+
+var newStr = str.replace('C','M');
+
+console.log(str); // Chitkara
+console.log(newStr); // Mhitkara
+
+
+
+
+Q/- Removing a charecter from a String: "Hello, World" // removing the charecter ','.
+
+Approach1:
+
+var str = "Hello, World!";
+
+var bag ="";
+
+for(let i=0;i<str.length;i++)
+{
+
+if(str[i] === ',')
+{
+	continue;
+}
+
+bag= bag+str[i];
+}
+
+console.log(str);
+console.log(bag);
+
+
+Approach2:
+
+
+let str = "Hello, World!"";
+
+let charToRemove = ',';
+
+let newStr = str.replace(charToRemove,'');
+
+console.log(str);
+console.log(newStr);
+
+
+Q/ Inside a names array, count the names which starts from 'A'?
+
+
+var arr = ["Amit", "Sonu","Dinesh","Sunil","Amar","Venu","Ajit","Aanand"]; 
+
+var count=0;
+
+for(var i = 0;i<arr.length;i++)
+{
+
+var str = arr[i];
+
+if(str[0] === 'A')
+{
+count++;
+}
+
+
+}
+
+
+console.log(count);
+
+
+
+Q/- Inside a names array count the names which contains 'A'?
+
+
+
+var arr = ["Amit", "Sonu","Dinesh","Sunil","Amar","Venu","NAMAN","Ajit","Aanand"]; 
+var count=0;
+
+
+for(var i = 0;i<arr.length;i++)
+{
+
+var str = arr[i];
+
+for(var j=0;j<str.lenght;j++)
+{
+
+	if(str[j] === 'A')
+	{
+		count++;
+		break;
+	}
+
+}
+
+}
+
+
+
+
+length property:
+----------------
+
+console.log("Chitkara".length);	//8
+console.log("Masai".length);	//5
+console.log("".length);		//0
+console.log(' '.length);	//1
+
+
+
+
+
+Q/- WAP to reverse a String. without the reverse() function ?
+
+
+let str = "Welcome";
+
+let bag="";
+
+for(let i=str.length-1; i>=0; i--)
+{
+
+bag = bag+str[i];
+
+}
+
+console.log("Original String:",str);
+console.log("Reverse String:",bag);
+
+
+
+Some of the inbuilt functions in String:
+========================================
+
+
+1. String toUpperCase();
+2. String toLowerCase();
+
+
+example1:
+
+var str = "Welcome";
+
+str.toUpperCase();
+
+console.log(str); // Welcome , becoz String is immutable
+
+
+example2:
+
+var str = "Welcome";
+
+var str2 = str.toUpperCase();
+
+console.log("Original String",str); //Welcome
+console.log("Modified String",str2); //WELCOME
+
+
+3. String trim(): It will trim the leading and trailing spaces from a string, it will not trim the spaces from the middle.
+
+example1:
+
+var str1= "  Welcome   ";
+
+var str2 = str1.trim();
+
+console.log(str1); // "  Welcome  "
+console.log(str2); //Welcome
+
+
+example2:
+
+var str1= "  Welcome to Chitkara ";
+var str2 =str1.trim();
+
+console.log(str1);// "  Welcome to Chitkara "
+console.log(str2);//Welcome to Chitkara
+
+
+
+4. String charAt(index);  it takes the 0 based index and returns the located charecter at that index.
+If the index specified to charAt() is out of the string's length range, an empty string is returned.
+
+  
+5. String charCodeAt(index); it returns the char ASCII code located at that index. 
+
+
+example1:
+
+var str = "Diwali";
+console.log(str.charAt(0));	//'D'
+console.log(str.charAt(10)); // empty string
+
+console.log(str.charCodeAt(0));	//68
+
+
+ASCII
+------
+
+
+65-90 : 'A' - 'Z'
+97-122 : 'a' - 'z'
+48-57 : '0' - '9'
+32: space
+rest: special symbols.
+
+
+
+
+
+6. substr(start,numberofChar): extract numberofChar from a given string from the starting index.
+
+example:
+
+var str = "Diwali";
+console.log(str.substr(1,4));	//iwal
+console.log(str.substr(1,2));	//iw
+
+
+
+
+7. String replace(oldstring newstring): The replace() method replaces only the first match
+
+8. String replaceAll(oldstring newstring); It replaces all the matches
+
+example1:
+
+var text = "Hi abc abc";
+
+var newText = text.replace("abc", "pqr");
+
+console.log(newText);	//Hi pqr abc
+
+
+example2:
+
+var text = "Hi abc abc";
+
+var newText = text.replaceAll("abc", "pqr");
+
+console.log(newText);	//Hi pqr pqr
+
+
+
+9. integer indexOf(char);
+
+10. integer lastIndexOf(char)
+
+--it will work as similar as array.., if the char is not found then it will return -1.
+
+example:
+
+var str = "Welcome";
+
+console.log(str.indexOf('e')); //1
+console.log(str.lastIndexOf('e')); //5
+
+
+11. array split(-)
+12. boolean startsWith(str)
+13. boolean endsWith(str)
+
+
+Assignment:
+
+1. WAP to check if a String is palindrom or not.
+Sample input: NAMAN
+Sample Output: NAMAN is a palindrome String
+
+2. WAP to check to segragate vowels on the left hand side and consonants on right hand side of a String.
+Sample input: Chitkara
+Sample Output: araktihC
+
+3. WAP to remove duplicate charecters from a given string.
+Sample input: AABABCCDAB
+Sample output: ABCD
+
+
+
+
+
+
+Functions:
+==========
+
+
+
+--It is a named block of statement that is used to perform a particular task.
+
+--A function is used to make code reusable and it increases modularity in the code.
+
+syntax:
+
+
+function printSomething(a,b)
+{
+
+// 10000
+
+}
+
+
+
+
+
+
+
+
+--a function syntax is basically has 2 parts:
+
+1. function signature: 
+
+function functionName(parameter-list)
+
+2. function body:
+{
+// body of the function
+}
+
+
+
+--A function can be created with empty parameter list.
+
+example:
+
+function functionName()
+{
+ //body of function
+}
+
+
+
+**To execute a function; we have to call the function.
+
+
+--a function is having 2 section:
+
+1. defining a function // function author/creator will define a function
+2. calling a function // function caller will call a function.
+
+
+--Inside a function,we can write any number of statements.
+--A function can be called any number of times.
+--A function can call any other function.
+
+
+
+example: without a function
+
+var num1 = 10;
+var num2 = 20;
+
+var sum = num1+num2;
+
+console.log("The sum is", sum);
+
+--the above code is not reusable. i.e if we want to add the two numbers once again, we need to write the same logic again and again.
+
+--but using function we can make the above logic reusable:
+
+example
+
+//defining a function
+function addition()
+{
+
+	var num1 = 10;
+	var num2 = 20;
+
+	var sum = num1+num2;
+
+	console.log("The sum is", sum);
+
+}
+
+
+//calling the above function two times
+
+addition();
+addition();
+
+
+example2: Write a function to print the "Welcome User".
+
+//function defination
+function greet()
+{ 
+	console.log("Welcome User");
+}
+
+
+//calling the above function
+greet();
+
+
+console.log("Hi");
+greet();
+console.log("Hello");
+greet();
+greet();
+console.log("Bye");
+
+
+Q/- Writing a function to print 1 to 10;
+
+//function defination
+function doPrinting1To10()
+{
+
+	for(var i=1;i<=10;i++)
+	{
+		console.log(i);
+	}
+
+}
+
+//calling the above function
+doPrinting1To10();
+
+
+Local and global variable:
+===========================
+
+
+Note: inside a function, if we create any variable using var keyword that variable will become the local variable of that function. and we can not use that variable outside of that function.
+
+--The variable, which we define outside of that function, will become the global variable, and we can use that variable anywhere, i.e inside that function or outside of that function as well.
+
+
+
+example:
+
+
+var name = "Chitkara university";
+
+function greet()
+{
+var message = "Welcome";
+console.log(name); //accessing global variable inside the function
+console.log(message);//accessing local variable inside the function
+}
+
+
+
+
+console.log(name); //valid
+//console.log(message); //Invalid
+
+
+
+
+
+function with parameters:
+========================
+
+In a function the values on which operation is to be applied is written inside the function that makes it less useful because for every other values we have to make changes in the function itself.
+
+to overcome this problem, we have to provide value to the function from outside i.e. the place where function is called. and to hold those values we need to define the parameters inside the function.
+
+
+example: function without parameter:
+
+//function defination
+function doAddition()
+{
+
+var num1 = 10;
+var num2 = 20;
+
+var result = num1 + num2;
+console.log("The Result is:",result);
+
+}
+
+
+//function call
+doAddition();
+
+
+example: function with parameter
+
+//function defination
+function doAddition(n1,n2)  
+{
+
+console.log("n1 value is:",n1);
+console.log("n2 value is:",n2);
+
+var result = n1+n2;
+console.log("The Result is:",result);
+
+}
+
+
+//function call
+doAddition(10,20);
+doAddition(50,40);
+doAddition(100); // NaN (10+undefined) = NaN
+doAddition(); // NaN (undefined+undefined) = NaN
+
+
+
+
+--inside the function defination, n1 and n2 is called as parameters and while calling supplied values 10, 20 is called as an argument.
+
+
+Note: parameters defined inside the function, will act as a local variable to that function.
+
+
+
+
+Q/- Write a function which takes a username as a parameter and print the greeting message to the that user.
+
+
+Q/- Write a function which takes username and password as a parameter and show the authentication message to the user.
+
+if username is "Admin" and password is "12345" then it should print "Welcome Admin" otherwise show the "Invalid Username or password".
+
+
+function doAuthentication(username,password)
+{
+
+
+	if(username === "Admin" && password === "12345")
+	{
+		console.log("Welcome Admin");
+	}
+	else
+	{
+		console.log("Invalid Username or Password");
+	}
+
+}
+
+doAuthentication("abc","123");
+doAuthentication("Admin","12345");
+
+
+
+
+
+Q/- Write a function to take a number from the parameter and print its factorial.
+
+
+function factorial(n) 
+{
+ 
+  var fact = 1;
+
+  for(var i = 1; i <= n; i++){
+    fact = fact * i;
+  }
+  
+console.log("The Result is:"+fact); //The Result is:55
+console.log("The Result is:",fact); //The Result is: 55
+console.log(`The Result is ${fact}`); //String template literal
+}  
+ 
+
+factorial(5);
+factorial(8);
+
+
+Q/- Write a function to take String as a parameter and print the reverse of that string.
+
+"Welcome"
+
+
+function reverseString(str)
+{
+
+	var bag="";
+
+	for(var i=str.length-1; i>=0;i--)
+	{
+		bag = bag+str[i];
+	}
+
+	console.log(bag);
+
+}
+
+
+//calling the function 
+reverseString("Welcome");
+
+
+
+Q/- Write a function which takes 3 number as a parameter and print maximum number.
+
+
+function findMaximum(n1,n2,n3)
+{
+
+	if(n1 > n2 && n1 > n3)
+	{
+		console.log("The Maximum is:",n1);
+	}
+	else if(n2 > n1 && n2 > n3)
+	{
+		console.log("The Maximum is:",n2);
+	}
+	else if(n3 > n1 && n3 > n2)
+	{
+		console.log("The Maximum is:",n3);
+	}
+	else
+	{
+		console.log("All numbers are equal");
+	}
+}
+
+
+findMaximum(10,2,5); //10
+findMaximum(10,12,5); // 12
+findMaximum(10,2,15);//15
+findMaximum(10,10,10); //All numbers are equal
+
+
+
+Q/- write a function to take a number as a parameter and print the sum from 1 till that number:
+
+
+
+
+
+
+function findSum(number)
+{
+
+	let sum =0;
+
+	for(let i=1;i<=number;i++)
+	{
+		sum = sum+i;
+	}
+
+	console.log("The Sum is",sum);
+
+}
+
+
+findSum(10);
+findSum(20);
+
+
+Q/- Write a function which takes an year as a parameter and print whether it is leap year or not?
+
+
+
+function leapYear(year)
+{
+
+	if((year % 4 === 0 && year % 100 !==0) || year % 400 ===0)
+	{
+		console.log(year,"is leap year");
+	}
+	else
+	{
+		console.log(year,"is not a leap year");
+	}
+}
+
+
+leapYear(2015);
+leapYear(2020);
+leapYear(2020);
+leapYear(1900);
+
+
+
+
+Q/- Write a function which takes an numbers array as a parameter and print all the elements one by one from that array.
+
+
+
+
+
+
+function printArray(arr)
+{
+
+	for(var i=0;i<arr.length;i++)
+	{
+		console.log(arr[i]);
+	}
+
+} 
+
+
+var numbers = [20,50,60,80,65];
+
+//calling the function
+printArray(numbers);
+
+
+printArray([80,60,90,70,50]);
+
+
+
+
+//Guess the Output
+
+var num =10;
+
+function increment(){
+num++;
+}
+
+
+increment();
+increment();
+
+console.log(num);
+
+
+
+
+
+Q/- Write a function which takes an numbers array as a parameter and print the sum of all the elements from that array.
+
+
+Q/- Write a function which takes an numbers array as a parameter and print the maximum and minimum numbers from that array.
+
+
+
+
+
+
+function with return type:
+==========================
+
+
+--A function can return a value to the caller also.
+--returned value could be of any type (number, string, boolean, array, object, another function).
+--When a function reaches to the return statement, the function will stop executing.
+--if a function return any value, then the caller can hold that value inside any variable for furthur operation on that value.
+
+
+example: Write a function which takes two numbers as a parameter and return the addition of those numbers.
+
+
+
+
+
+function doAddition(n1,n2)
+{
+
+	var result = n1+n2;
+	return result; // after this line function will stop the execution
+	
+
+
+}
+
+
+//calling the function
+
+doAddition(20,30); // here if we do not hold the returned value, then that value will be lost.
+
+
+var x=doAddition(20,30); //holding/catching the return value.
+
+console.log("The Result is:",x);
+
+
+Q/- write a function which takes a number and return the factorial of that number.
+
+
+function findFactorial(number)
+{
+
+	console.log("Finding the factorial starts..");
+
+	var fact=1;
+
+	for(var i=1;i<=number;i++)
+	{
+		fact = fact*i;
+	}
+
+	
+
+	console.log("Factorial is calculated..");
+	return fact;
+
+
+}
+
+
+//calling the function
+findFactorial(5); // here we loose the returned value
+
+var result = findFactorial(8);
+
+console.log(`The factorial of 8 is ${result}`);
+
+
+//console.log("The Factorial of 8 is", findFactorial(8));
+
+
+
+Q/- write a function which takes username and password as a parameter and return the authentication message.
+--if the username is "Admin" and password is "12345" it should return "Welcome Admin" message otherwise it should return "Invalid Username or Password" message;
+--print the returned message in uppercase.
+
+
+
+
+function doAuthentication(username,password)
+{
+
+	if(username === "Admin" && password === "12345")
+	{
+		return "Welcome Admin";
+	}
+	else
+	{
+		return "Invalid Username or Password";
+	}
+
+
+}
+
+
+doAuthentication("Admin","12345"); // here we loose the returned value
+
+var message = doAuthentication("Admin","12345"); //holding the return value
+
+//furthur processing
+console.log(message.toUpperCase());
+
+
+Q/- Write a function which takes a numbers array and return the sum of all the elements of that array, and then check whether the sum is odd number or even number.
+
+function getResult(arr){
+
+var sum = 0;
+
+for(var i=0;i<arr.length;i++){
+sum = sum+arr[i];
+}
+
+return sum;
+
+}
+
+var numbers = [10,20,30,40];
+
+var result = getResult(numbers);
+
+if(result % 2 === 0)
+{
+console.log("Even");
+}
+else
+{
+console.log("Odd");
+}
+
+
+
+
+Q/- write a function which takes a String as a parameter and return all the vowel charecter present inside that string in the form of an array
+
+
+function getVowelArray(str)
+{
+
+	var arr = [];
+
+	for(let i=0;i<str.length;i++)
+	{
+
+		if("aeiouAEIOU".includes(str[i]))
+		{
+			arr.push(str[i]);
+		}
+
+	}
+
+	return arr;
+}
+
+
+//calling the function
+getVowelArray("Welcome"); //here we loose the returned value
+
+
+var result = getVowelArray("Welcome"); 
+console.log(result);
+
+console.log(getVowelArray("Chitkara University"));
+
+
+
+
+
+
+Q/- Write a function to validate a username:
+--username length should be minimum 8 charecter length.
+
+
+function validateUsername(username)
+{
+
+	if(username.length >=8)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+//or
+
+
+function validateUsername(username)
+{
+
+	let isValid = false;
+
+	if(username.length >=8)
+	{
+		isValid = true;
+	}
+
+	return isValid;
+}
+
+//or
+
+
+function validateUsername(username)
+{
+
+
+	let isValid = username.length >=8 ? true: false;
+	
+
+	return isValid;
+}
+
+
+//or
+
+
+function validateUsername(username)
+{
+
+	return username.length >=8 ? true: false;
+	
+}
+
+
+//or
+
+function validateUsername(username)
+{
+
+	return username.length >=8;
+	
+}
+
+//calling the function
+
+ex1:
+
+validateUsername("abcd"); // will loose the return value
+
+ex2:
+
+var result = validateUsername("abcd1234");
+
+if(result)
+{
+console.log("Username is valid");
+}
+else
+{
+console.log("Username is Invalid");
+}
+
+
+
+
+ex3:
+
+if(validateUsername("abcd12345"))
+{
+console.log("Username is valid");
+}
+else
+{
+console.log("Username is Invalid");
+}
+
+
+
+
+
+
+Q/- Write a function which takes a password as a parameter and validate that password:
+
+--length should be minimum 8 charecter.
+--should contain atleast one uppercase
+--should contain atleast one lowercase
+--should contain atleast one digit
+
+approach1: 
+
+function validatePassword(password){
+
+
+	var result = true;
+
+	// Check if the password has a minimum length of 8 characters
+	if(password.length < 8)
+	{
+		result = false;
+	}
+
+
+	//// Check if the password contains at least one uppercase letter
+	let hasUpperCase = false;
+    	for (let i = 0; i < password.length; i++) 
+	{
+        	if (password[i] >= 'A' && password[i] <= 'Z') 
+		{
+            		hasUpperCase = true;
+            		break;
+        	}
+    	}
+
+    	if (!hasUpperCase) 
+	{
+        	result = false;
+    	}
+
+	// Check if the password contains at least one lowercase letter
+	let hasLowerCase = false;
+    	for (let i = 0; i < password.length; i++) 
+	{
+        	if (password[i] >= 'a' && password[i] <= 'z') 
+		{
+            		hasLowerCase = true;
+            		break;
+        	}
+    	}
+    
+	if (!hasLowerCase) 
+	{
+        	result= false;
+    	}
+
+	// Check if the password contains at least one digit
+	let hasDigit = false;
+    	for (let i = 0; i < password.length; i++) 
+	{
+        	if (password[i] >= '0' && password[i] <= '9') 
+		{
+            		hasDigit = true;
+            		break;
+        	}
+    	}
+
+    	if (!hasDigit) 
+	{
+        	result = false;
+    	}
+
+	return result;
+
+
+}
+
+
+//calling the function
+
+var password = "MyPassw0rd";
+
+if (isValidPassword(password)) 
+{
+    console.log("Password is valid.");
+} 
+else 
+{
+    console.log("Password is not valid.");
+}
+
+
+//or
+
+var result = isValidPassword("MyPassw0rd");
+
+if(result)
+{
+    console.log("Password is valid.");
+} 
+else 
+{
+    console.log("Password is not valid.");
+}
+
+
+
+
+Improved code of the above application:
+---------------------------------------
+
+
+function validatePassword(password) 
+{
+
+	// Check if the password has a minimum length of 8 characters
+    	if (password.length < 8) 
+    	{
+        	return false;
+    	}
+
+    	// Check if the password contains at least one uppercase letter
+    	let hasUpperCase = false;
+    	for (let i = 0; i < password.length; i++) 
+    	{
+        	if (password[i] >= 'A' && password[i] <= 'Z') 
+		{
+            		hasUpperCase = true;
+            		break;
+        	}
+    	}
+
+    	if (!hasUpperCase) 
+	{
+        	return false;
+    	}
+
+    	// Check if the password contains at least one lowercase letter
+    	let hasLowerCase = false;
+    	for (let i = 0; i < password.length; i++) 
+    	{
+        	if (password[i] >= 'a' && password[i] <= 'z') 
+		{
+            		hasLowerCase = true;
+            		break;
+        	}
+    	}
+	
+    	if (!hasLowerCase) 
+	{
+        	return false;
+    	}
+
+    	// Check if the password contains at least one digit
+    	let hasDigit = false;
+    	for (let i = 0; i < password.length; i++) 
+	{
+        	if (password[i] >= '0' && password[i] <= '9') 
+		{
+            		hasDigit = true;
+            		break;
+        	}
+    	}
+
+	if (!hasDigit) 
+	{
+        	return false;
+    	}
+
+
+
+    	// If all conditions are met, the password is valid
+    	return true;
+}
+
+
+
+This way, the function will return false as soon as any condition fails, and we don't need the result variable.
+
+
+
+
+
+var, let, const:
+================
+
+--JavaScript introduced let and const in ES6 (ECMAScript 2015) to improve variable scoping and prevent errors caused by var. Both let and const provide block scope, a significant enhancement over the function or global scope of var.
+
+
+
+1. var variable can be re-declatred, but let variable can not be re-declared.
+
+example:
+
+var name= "Masai";
+
+var name = "Chitkara";
+
+console.log(name); 
+
+output: Chitkara
+
+
+let name = "Masai";
+let name = "Chitkara";
+
+console.log(name);
+
+output: SyntaxError: Identifier 'name' has already been declared.
+
+
+
+
+2. Scope
+var: Variables declared with var are function-scoped or globally scoped. If declared inside a function, the variable is only accessible within that function. If declared outside any function, it is globally accessible.
+
+let: Variables declared with let are block-scoped, meaning they are only accessible within the nearest set of {} block (e.g., inside a pair of {}).
+
+
+Example1:
+
+function testVar() {
+  if (true) {
+    var x = 10; // x is function-scoped
+  }
+  console.log(x); // Output: 10
+}
+
+//console.log(x); //Error
+
+testVar();
+
+
+
+
+function testLet() {
+  if (true) {
+    let y = 20; // y is block-scoped
+  }
+  console.log(y); // ReferenceError: y is not defined
+}
+
+testLet();
+
+
+
+Example2:
+
+{
+var x= 20;
+let y=30
+}
+
+
+console.log(x); //20
+console.log(y); //Error
+
+
+Example3:
+
+
+let x = 10;
+
+if(true){
+
+let x= 20;
+
+console.log(x); //20
+
+}
+
+console.log(x); //10
+
+
+
+
+
+
+
+
+3. Hoisting
+var: Variables declared with var are hoisted to the top of their enclosing function or global scope. They can be used before their declaration (though they will have an undefined value until the assignment).
+
+let: Variables declared with let are also hoisted but are not initialized. Accessing them before their declaration leads to a ReferenceError due to the Temporal Dead Zone (TDZ).
+
+Example:
+
+console.log(a); // Output: undefined (due to hoisting)
+var a = 5;
+
+console.log(b); // ReferenceError: Cannot access 'b' before initialization
+let b = 10;
+
+
+
+Q/- What is Hoisting?
+
+
+
+
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope during the compilation phase, before the code is actually executed. This means that you can use a variable or call a function even before it's declared in the code.. for example: if we do this:
+
+
+
+
+console.log(name)
+var name = "Ramesh";
+console.log(name);
+
+
+
+it is interpreted as this:
+
+var name = undefined;   //initialized with the value 'undefined'.
+console.log(name); //undefined
+name = "Ramesh"; 
+console.log(name); // Ramesh
+
+
+
+
+So var variables are hoisted to the top of their scope and initialized with a value of undefined.
+but let variables are not initialized with any value.
+
+example:
+
+console.log(rollno); //Error
+let rollno = 101;
+
+
+
+it is interpreted as this:
+
+let rollno;   //it will not be initialized with any value,even with 'undefined'.
+console.log(rollno);
+rollno= 101;
+
+
+
+
+Output: ReferenceError: Cannot access 'rollno' before initialization
+
+
+fun1();
+
+
+function fun1(){
+
+	console.log("Inside fun1 function");
+
+}
+
+
+
+
+//here function defination is hoisted at the top
+
+
+Why Hoisting in JavaScript:
+---------------------------
+
+--To use the function even before its declaration.
+
+--var hoisting is just a byproduct of the hoisting concept.
+
+
+Why TDZ(Temporal Dead Zone): Make it easier to avoid and catch errors: accessing variables before declaration is bad practice and should be avoided.
+
+
+
+4. var keyword pollute the global namespace, which can be avoided using let or const. we will see about the global namespace pollution in the DOM.
+
+
+
+
+ 
+
+const:
+------
+
+--we can update the value of var and let variables, but const variable value can not be changed.
+
+--var and let variables can be declared without initialization, but const variable must the initialized during the declaration.
+
+
+example:
+
+
+var x; //declaration
+x = 20; // initialization
+x = 50; // re-initialization
+
+
+const y; //invalid
+y=20; // invalid
+
+
+const z= 20; // valid
+z = 50; //invalid
+
+
+
+Note: const prevents reassignment but allows the modification of the contents of objects or arrays (i.e., it locks the reference, not the internal content).
+
+
+
+Example const with array:
+
+const arr = [10,20,30,40];
+
+arr.push(50);
+
+
+console.log(arr); //[10,20,30,40,50];
+
+arr = "hello"; //error
+
+arr = [10,20]; // error
+
+
+Note: Both let and const are hoisted to the top of their block scope but remain in the Temporal Dead Zone (TDZ), meaning they cannot be accessed before their line of declaration.
+
+Example:
+
+console.log(name); // ReferenceError: Cannot access 'name' before initialization
+const name = "Alice";
+
+
+
+
+Java Script Object:
+===================
+
+--inside a variable we can store a simple information like:
+
+example:
+
+let name = "Ram";
+let age = 26;
+let gender = "male";
+let address = "delhi";
+let married = false;
+
+
+
+
+
+--array is a data-structure using which we can store multiple values inside a variable.
+
+
+example:
+
+let details = ["Ram",26,"male","delhi",false];
+
+--the above array will not explain about any valid information.
+
+
+--to hold the meaningfull information, there is another data-structure is available inside the Java-script, called an Object.
+
+--In Java-script object, we hold the information in the form of kay-value pair.
+
+--Java-script objects are also called as "key-value pair" or "dictionary".
+
+dictionary:
+
+key---value
+university--- its meaning
+
+example: if we see any realtime form page in a webpage:
+
+--the form also will be in the form of key-value pair.
+
+name: "Ram"
+age: 26
+address: "delhi"
+gender: "male"
+email: "ram@gmail.com"
+hobbie: "coding"
+
+
+Java script object syntax:
+--------------------------
+
+let x = {key: value, key: value,...};
+
+let y = {}; //empty object
+
+let z= []; //empty array
+
+
+
+
+console.log(y);
+console.log(z);
+
+
+example:
+
+let user = {name: "Ram", age: 26, address: "delhi", gender: "male", married: false};
+
+
+//or
+
+let user = {
+
+name: "Ram",
+age: 26,
+address: "delhi",
+gender: "male",
+married: false
+
+};
+
+
+console.log(user);
+
+
+--here key should not be duplicate, if we define the duplicate key, then it will override the previous value.
+
+example:
+
+
+let x= {a: 10, b: 20, c: 30, a: 40};
+
+console.log(a); // {a: 40, b:20, c: 30};
+
+
+--the value of an object can be any type like: number, string, boolean, array, null, undefined, function, another-object.
+
+
+example:
+
+
+let user = {
+
+roll: 101,
+name: "Ram",
+marks: 500,
+hobbies: ["coding", "playing"],
+married: false,
+salary: null,
+spouse: undefined 
+
+}
+
+
+console.log(user);
+
+
+Note: the key of an object should always be in a string format, where double quote is optional.
+
+example
+
+
+let user = {
+
+"roll": 101,
+"name": "Ram",
+"marks": 500,
+"hobbies": ["coding", "playing"],
+"married": false,
+"salary": null,
+"spouse": undefined 
+
+}
+
+
+console.log(user);
+ 
+
+
+Q/- WAP to create an object of student with the following details and print the object.
+
+
+roll, name, age, address, gender, hobbies, email, phone, smoking
+
+
+ 
+Accessing the information from an object:
+-----------------------------------------
+
+--to access any information from an object, we have 2 ways:
+
+1. using dot notation
+2. using bracket notation
+
+example:
+
+
+let user = {
+
+roll: 101,
+name: "Ram",
+marks: 500,
+hobbies: ["coding", "playing"],
+married: false,
+salary: null,
+spouse: undefined 
+
+}
+
+
+//accessing the name of the user:
+
+using dot notation:
+------------------
+
+let n = user.name;
+console.log("The name of user is:",n);
+
+//or
+
+console.log("The name of user is:",user.name);
+
+console.log("The age of user is:",user.age);
+
+console.log("The Hobbies of user is:",user.hobbies);
+
+//or
+
+console.log("The Hobbies of user is:");
+
+for(let i=0;i<user.hobbies.length;i++)
+{
+	console.log(user.hobbies[i]);
+}
+
+
+using bracket notation:
+-----------------------
+
+
+let n = user["name"]; // bracket notation
+let n = user.name; // dot notation
+
+console.log("The name of user is:", n);
+
+//or
+
+console.log("The name of user is:",user["name"]);
+
+console.log("The age of user is:",user["age"]);
+
+console.log("The Hobbies of user is:",user["hobbies"]);
+
+
+//or
+
+
+
+console.log("The Hobbies of user is:");
+
+for(let i=0;i<user["hobbies"].length;i++)
+{
+	console.log(user["hobbies"][i]);
+}
+
+
+
+
+difference between dot and bracket notation:
+---------------------------------------------
+
+--using bracket notation we can access any values from an object by the help of any variable also.
+
+example:
+
+let field = "marks"; // here we can assign any key dynamically for which we need the information.
+
+console.log(user[field]);
+
+--but we can not use this approach using dot notation.
+
+example:
+
+console.log(user.field); // undefined
+
+
+
+adding a new entry inside an existing object.
+=============================================
+
+
+let user = {
+
+roll: 101,
+name: "Ram",
+marks: 500,
+hobbies: ["coding", "playing"],
+married: false,
+salary: null,
+spouse: undefined 
+
+}
+
+
+
+
+using dot notation:
+-------------------
+
+user.age=25;
+console.log(user);
+
+using bracket notation:
+-----------------------
+
+user["email"]="ram@gmail.com";
+console.log(user);
+
+
+
+update any existing entry inside an object.
+===========================================
+
+
+let user = {
+
+roll: 101,
+name: "Ram",
+marks: 500,
+hobbies: ["coding", "playing"],
+married: false,
+salary: null,
+spouse: undefined 
+
+}
+
+
+
+
+using dot notation:
+-------------------
+
+user.salary=5000;
+console.log(user);
+
+using bracket notation:
+-----------------------
+
+user["married"]= true;
+console.log(user);
+
+
+
+delete an entry from an existing object:
+========================================
+
+
+
+let user = {
+
+roll: 101,
+name: "Ram",
+marks: 500,
+hobbies: ["coding", "playing"],
+married: false,
+salary: null,
+spouse: undefined 
+
+}
+
+
+
+using dot notation:
+-------------------
+
+delete user.spouse;
+console.log(user);
+
+using bracket notation:
+-----------------------
+
+delete user["married"];
+console.log(user);
+
+
+
+Nested Object:
+===============
+
+let user = {
+
+roll: 100,
+name: "Ramesh",
+age: 25,
+marks: 500,
+address: {
+	 city: "Indore",
+	 state: "MP",
+	 country: "India",
+	 pin: 576576
+	},
+email: "ramesh@gmail.com"
+
+};
+
+
+
+--In Java-script an object is a key-value pair, where value can be of any type, it can be another object as well.
+
+example:
+
+let user = {
+
+roll: 100,
+name: "Ramesh",
+age: 25,
+marks: 500,
+address: {
+	 city: "Indore",
+	 state: "MP",
+	 country: "India",
+	 pin: 576576
+	},
+email: "ramesh@gmail.com"
+
+};
+
+
+
+console.log(user.name);
+console.log(user["name"]);
+
+
+console.log(user.address);
+console.log(user["address"]);
+
+console.log(user.address.city);
+console.log(user["address"]["city"]);
+
+
+
+accessing each entries from an object:
+======================================
+
+
+Note: Unlike array, Java-script object does not follow index based position of entries, the entries can be in random order.
+
+--unlike array there is no any "length" property available inside a Java-script object.
+
+--array syntax is [] where as Java-script object syntax is {}.
+
+ 
+--In order to access each entries from an Object one by one we need to make use of a special type of for-loop called: 
+"for-in" loop.
+
+
+example:
+
+
+let user = {
+
+roll: 101,
+name: "Ram",
+marks: 500,
+hobbies: ["coding", "playing"],
+married: false,
+salary: null,
+spouse: undefined 
+
+}
+
+
+for(let i in user) // here each key from the obj will be loaded inside
+{		   // variable i.
+	console.log(i);
+}
+
+
+//or
+
+for(let i in user)
+{
+	console.log(i,"==========",user[i]);
+}
+
+
+Example:
+
+
+
+let user = {
+
+roll: 10,
+name: "Ram",
+email: "ram@gmail.com",
+gender: "male",
+address: {
+
+	city: "indore",
+	state: "MP",
+	country: "India",
+	pin: 423232
+
+}
+
+};
+
+
+
+for(let i in user.address){
+
+console.log(i,"  ",user.address[i]);
+
+
+}
+
+
+
+Note: null, undefined, 0, empty string(""),   all having a boolean value false. but an empty object({}) and empty array([]), has the true value.
+
+example:
+
+
+let x= true; // "", 0, null, undefined, {},[]
+
+if(x){
+console.log("Welcome");
+}
+else{
+console.log("hello");
+}
+
+
+
+
+Q/- print the frequency of each elements inside an array:
+
+ex:
+
+["A","B","A","A","C","B"];
+
+output:
+
+A 3
+B 2
+C 1
+
+hint:
+
+let x= {};
+
+x["A"] = 1;
+x["B"] = 1;
+x["A"] = 2;
+
+
+
+console.log(x); // {A: 2, B: 1}
+
+
+solution:
+
+
+let arr= ["A","B","A","A","C","B"];
+
+let obj={};
+
+for(let i=0;i<arr.length;i++)
+{
+
+obj[arr[i]] = 1;
+
+}
+
+
+console.log(obj);
+
+
+final solution:
+
+
+let arr= ["A","B","A","A","C","B"];
+
+let obj={};
+
+for(let i=0;i<arr.length;i++)
+{
+
+
+if(obj[arr[i]] === undefined){
+
+obj[arr[i]] = 1;
+
+}
+else{
+obj[arr[i]] = obj[arr[i]] +1 ;
+
+}
+
+}
+
+
+console.log(obj);
+
+
+
+
+Q/- print the frequency of each elements inside an String:
+
+example:
+
+let str= "Masai";
+
+output:
+
+M 1
+a 2
+s 1
+i 1
+
+***************************************************************************************
+
+Array of Objects:
+=================
+
+single student object:
+---------------------
+
+let student = {roll: 100, name: "Ram", address: "Delhi", marks: 800};
+
+console.log(student);
+
+
+5 students objects: array of 5 student object.
+------------------- 
+
+
+
+let students = [
+
+{roll: 101, name: "Ram", address: "Delhi", marks: 800},
+{roll: 102, name: "Ravi", address: "Indore", marks: 700},
+{roll: 103, name: "Dinesh", address: "Bhopal", marks: 600},
+{roll: 104, name: "Vinay", address: "Mumbai", marks: 820},
+{roll: 105, name: "Sunil", address: "Pune", marks: 900}
+
+];
+
+
+
+console.log(students.length); //5
+console.log(students);
+console.log(students[1]); //{roll: 102, name: "Ravi", address: "Indore", marks: 700}
+
+
+
+for(let i=0;i<students.length;i++)
+{
+
+	//getting a single student object.
+
+	let student = students[i];
+
+	console.log("Roll is :",student.roll);
+	console.log("Name is :",student.name);
+	console.log("Address is :",student.address);
+	console.log("Marks is :",student.marks);
+
+		
+	console.log("============================");
+
+
+}
+
+
+//OR
+
+
+
+    
+for(let i=0;i<students.length;i++)
+{
+    
+	let student = students[i];
+    
+        for(let k in student)
+        {
+            console.log(k,"  ",student[k]);
+        }
+        
+        console.log("============================");
+    
+}
+    
+    
+
+adding a new Student object inside the above list of Students(array of students):
+================================================================================
+
+
+students.push({roll: 108, name: "Manoj", address: "patna", marks: 720});
+
+//or
+
+
+let newStudent = {roll: 110, name: "Varun", address: "Bhopal", marks: 710};
+students.push(newStudent);
+
+
+
+Assignment:
+-----------
+
+Say we have following arrays:
+
+let subjects = ["English", "Hindi", "Physics", "Chemistry", "Maths"]
+let marks = [67, 76, 77, 66, 89]
+
+create a function that accept both arrays as parameter and return an object in which element of first array are keys and elements of second array are values.
+
+Expected output:
+
+{
+	'English': 67,
+	'Hindi': 76,
+	'Physics': 77,
+	'Chemistry': 66,
+	'Maths': 89
+}
+
+Solution:
+----------
+
+
+function getObject(sub, mk) {
+  //Empty object
+  let obj = {};
+
+  //iterate on each element of the array
+  for (let i = 0; i < sub.length; i++) {
+
+    //adding one entry inside the object
+    obj[sub[i]] = mk[i];
+  }
+
+  return obj;
+}
+
+
+
+
+
+
+
+function foo() {
+
+  let subjects = ['English', 'Hindi', 'Physics', 'Chemistry', 'Maths']
+  let marks = [67, 76, 77, 66, 89]
+
+  let object = getObject(subjects, marks);
+
+  console.log(object);
+}
+
+//calling the function
+foo();
+
+Output:
+
+{'English': 67, 'Hindi': 76, 'Physics': 77, 'Chemistry': 66, 'Maths': 89}
+
+
+
+
+
+Assignment:
+------------
+
+let names = ["Ajay", 'Chandan', 'Pravin', 'Sanjay'];
+let ages = [17, 18, 19, 20];
+let marks = [67, 0, 45, null];
+let states = ['UP', 'MP', 'AP', 'HP'];
+
+
+
+
+Create a function that converts above arrays to array of objects.
+
+
+expected output:
+
+[
+	{ name: "Ajay", age: 17, marks: 67, state: "UP"},
+	{ name: "Chandan", age: 18, marks: 0, state: "MP"},
+	{ name: "Pravin", age: 19, marks: 45, state: "AP"},
+	{ name: "Sanjay", age: 20, marks: null, state: "HP"}
+]
+
+
+
+function getObjects(names, ages, marks, states) {
+
+  //create an empty array to contain objects
+  let objArr = [];
+
+  //Iterate over each element of the array one by one
+  for (let i = 0; i < names.length; i++) 
+  {
+	
+    //create a new empty object
+    let newObj = {};
+
+    //add key and value to the objects
+    newObj.name = names[i];
+    newObj.age = ages[i];
+    newObj.marks = marks[i];
+    newObj.state = states[i];
+
+    //add this object to array
+    objArr.push(newObj);
+  }
+
+  return objArr;
+}
+
+
+
+function getResult() 
+{
+
+  let names = ["Ajay", 'Chandan', 'Pravin', 'Sanjay'];
+  let ages = [17, 18, 19, 20];
+  let marks = [67, 0, 45, null];
+  let states = ['UP', 'MP', 'AP', 'HP'];
+
+  let objects = getObjects(names, ages, marks, states);
+  
+  console.log(objects);
+
+}
+
+
+//calling the getResult() function
+getResult();
+
+
+
+Output
+[
+  { name: 'Ajay', age: 17, marks: 67, state: 'UP' },
+  { name: 'Chandan', age: 18, marks: 0, state: 'MP' },
+  { name: 'Pravin', age: 19, marks: 45, state: 'AP' },
+  { name: 'Sanjay', age: 20, marks: null, state: 'HP' }
+
+]
+
+
+
+Creating function for an Object:
+=================================
+
+syntax:
+
+
+let obj-name = {
+
+key: value,
+key: value,
+function-name: function(parameter-list)
+		{
+			// body of the function
+		},
+
+key: value
+
+
+};
+
+
+
+
+
+--here function-name will be one of the key of the object.
+
+example:
+
+
+let student = {
+
+name: "Ramesh",
+age: 25,
+address: "delhi",
+display: function(){
+
+		console.log("Welcome, this is the display function");
+	},
+smoking: false
+};
+
+
+console.log(student);
+console.log(student.name);
+student.display(); // calling the display function.
+
+
+Note: if a function is defined inside an object, it is called as a method of that object.
+
+--we can define any number of local variables inside the function of an object. and we can access the local variables inside that function directly.
+
+--but inorder to access the properties of object inside the function of that object, we need to make use of 'this' keyword.
+
+--'this' keyword represents the current object.
+
+example:
+
+
+let student = {
+
+name: "Ramesh",  // object variable or instance variable
+age: 25,              
+address: "delhi",  
+display: function(){
+	
+		let x=20; //local variables
+		let y=30; //local variables
+		console.log("Welcome, this is the display function");
+		console.log("The value of x and y is ",x,y); //local variables are accessable directly
+		//console.log("The value of name and age is ",name,age); //object or instance variables are not accessable
+									 //directly
+
+		console.log("The value of name and age is ",this.name,this.age);
+		
+
+	},
+smoking: false
+};
+
+
+
+student.display();
+
+
+
+example2:
+---------
+
+let student = {
+
+name: 'Anuj',
+age: 20,
+display: function(){
+	//console.log("Name: " + name + " Age: " + age); Error
+	console.log("Name: " + this.name + " Age: " + this.age);
+	}
+}
+
+student.display();
+
+
+
+Output
+
+Name: Anuj Age: 20
+
+
+
+
+
+Note: Data present inside an object is called the state of that object, and functions/methods presents inside the object is called behaviour of that object.
+
+
+
+
+
+
+
+example3:
+
+
+
+let song = {
+
+
+title: "Wande Mataram",
+artist: "Lata",
+
+play: function()
+	{
+	console.log(this.artist+" is Singing :"+this.title);
+	}
+
+};
+
+
+song.play();
+
+song.title = "Jai Ho";
+song.artist = "Sukhwindar";
+
+song.play();
+
+
+
+
+
+example4:
+----------
+
+
+let simpleInterest = {
+  
+principleAmount: 1000,
+interestRate: 8.0,
+timePeriod: 2.0,
+  
+calculate: function(panelty) 
+           {
+              let si = (this.principleAmount * this.interestRate * this.timePeriod / 100) + panelty;
+              console.log("Simple interest amount with panelty is " + si);
+           }
+}
+
+
+
+
+
+simpleInterest.calculate(0);
+simpleInterest.calculate(10);
+
+Output
+
+Simple interest amount with panelty is 160
+Simple interest amount with panelty is 170
+
+
+simplateInterest.principleAmount = 2000;
+simpleInterest.calculate(10);
+
+
+
+
+
+
+
+Assignment:
+-----------
+
+Create an object student
+first key: name
+second key: age
+third key: marksheet (its an object that has marks of 3 subjects english, hindi & math)
+add a method to the object that print following output
+The average marks of <name> whose age is <age> is: <average marks>
+
+
+
+Solution:
+---------
+
+ 
+
+let student = {
+
+name: "ABC",
+age: 19,
+
+marksheet: {
+             english: 43,
+             hindi: 44,
+             math: 45
+            },
+
+average: function() 
+         {
+            let sum = this.marksheet.english + this.marksheet.hindi + this.marksheet.math;
+            let avg = sum / 3;
+          //console.log("The average marks of " + this.name + " whose age is " + this.age + " is " + avg);
+            console.log(`The average marks of ${this.name} whose age is ${this.age} is ${avg}`);
+          }
+
+
+}
+
+
+
+
+student.average();
+
+
+
+
+Q/- write an object with the following properties:
+
+name
+age
+email
+mobile
+hobbies: 3 hobbie
+
+--define a function inside this object which print all the details..
+
+
+
+
+
+
+
+Assignment:
+-----------
+
+Create an object that contains product details: name, price(in INR), discount(in %), gst(in %)
+create a function that is to return selling price of the product
+
+Solution:
+---------
+
+
+let product = {
+
+name: "PQR",
+price: 800,
+discount: 10,
+gst: 2.5,
+
+calculate: function(){
+		let sellingPrice = this.price + (this.gst * this.price / 100) - (this.discount * this.price / 100);
+		return sellingPrice;
+	     }
+}
+
+let sp = product.calculate();
+console.log("the selling price is " + sp);
+
+
+//or
+
+console.log("the selling price is " + product.calculate());
+
+
+Output:
+the selling price is 740
+
+
+
+
+
+
+
+
+
+
+Assignment: create an Account object with the following properties:
+
+accountNo, name, balance
+
+and with following 2 functionalities:
+
+withdraw, checkBalance
+
+
+
+let account = {
+
+
+accountNo: 43232,
+name: "Ramesh",
+balance: 50000,
+
+withdraw: function(amount){
+		
+		if(amount <= this.balance)
+		{
+			this.balance = this.balance - amount;
+			console.log("Amount withdwran: please collect the cash", amount);
+		}
+		else
+		{
+			console.log("Insufficient balance");
+		}
+
+	  },
+
+checkBalance: function(){
+
+			console.log("Your Balance is:",this.balance);
+		}
+
+}
+
+
+
+
+
+//calling the function:
+
+//account.withdraw(80000); //Insufficient balance
+
+
+account.withdraw(40000);
+
+account.checkBalance();
+
+
+
+
+Task: Add deposit functionality to the above object.
+
+
+
+Assignment2:
+-----------
+WAP to create a collage object haiving an empty list of students, define a functionality inside this object which should be able to take roll, name, address and marks as a parameter, using these parameter create a student object and add that object inside the list of students.
+
+--print the list of students.
+
+
+
+ 
+var collage = {
+
+
+students: [],
+
+addStudent: function(r, n, a, m){
+
+		let student= {};//empty object
+
+		student.roll = r;
+		student.name = n;
+		student.address = a;
+		student.marks=m;
+
+		this.students.push(student);
+
+	},
+
+print: function(){
+
+		for(let i=0;i<this.students.length;i++)
+		{
+			let student =  this.students[i];
+
+			console.log("Roll is: ",student.roll);
+			console.log("Name is: ",student.name);
+			console.log("Address is: ",student.address);
+			console.log("Marks is: ",student.marks);
+			consoe.log("=======================");
+
+		}		
+
+	}
+
+
+}
+
+
+
+console.log(collage.students);// []
+
+collage.addStudent(100,"Dinesh","Indore",500);
+collage.addStudent(101,"Sumit","Pune",520);
+collage.addStudent(102,"Manoj","Mumbai",600);
+collage.addStudent(103,"Mukesh","Delhi",700);
+
+
+console.log(collage.students);
+
+
+
+Q/- add a function inside the above collage object to print each student details in descriptive manner:
+
+like:
+
+Roll is 100
+Name is Dinesh
+Address is Indore
+Marks is 500
+================
+Roll is 101
+Name is Sumit
+Address is Pune
+Marks is 520
+==============
+--
+--
+
+
+
+
+
+
+Assignment3:
+-----------
+
+
+Create an array of five objects such that each object contains information about the product that has properties like name, price, rating. 
+
+now perform following action:
+
+1. Add new product to array
+2. find the average price of the array; using function
+3. Print product details that has minimum & maximum price & add remark to them as "price touches on the lowest or the highest"; using function
+4. Reduce price of all products by 10% whose rating is below 3 & add remark to each product "Best price"; using function
+5. Delete all products whose rating is between 0.0 and 2.9; using function
+
+
+
+
+let products = [
+
+    {name: "ABC", price: 4500, rating: 4.5},
+    {name: "PQR", price: 1300, rating: 5.0},
+    {name: "XYZ", price: 2300, rating: 4.0},
+    {name: "PYT", price: 3000, rating: 3.5},
+    {name: "LMN", price: 6700, rating: 2.5}
+
+  ];
+
+
+
+
+//function to add new product
+function addNewProduct(product)
+{
+
+	products.push(product);
+        console.log("New Product is addedd");
+}
+
+
+//addNewProduct({name: "TYU", price: 2398, rating: 3.0});
+
+let newProduct = {name: "TYU", price: 2398, rating: 3.0};
+addNewProduct(newProduct);
+
+
+
+
+console.log(products);
+
+
+
+//function to return the avg price of all the products
+
+function averagePrice(prs){
+
+  //code to computer average price
+
+  var sum = 0;
+
+  for(let i = 0; i < prs.length; i++)
+  {
+    sum = sum + prs[i].price;
+  }
+
+  let avg = sum/prs.length;
+  return avg;
+
+  //return sum/prs.length;
+  
+
+}
+
+
+let avgPrice=  averagePrice(products);
+console.log("The Average price of all the products is:",avgPrice);
+
+
+
+
+
+
+
+//function to get min and max price product
+
+function minMaxPrice(prs){
+
+  //code to find product with minimum price and add remark
+
+  let minPriceProduct = prs[0];
+  let maxPriceProduct = prs[0];
+
+  for(let i = 1; i < products.length; i++)
+  {
+  
+    if(minPriceProduct.price > products[i].price)
+    {
+      minPriceProduct = products[i];
+    }
+
+    if(maxPriceProduct.price < products[i].price)
+    {
+      maxPriceProduct = products[i];
+    }
+
+  }
+
+
+  //adding remark propertry to the object  
+  minPriceProduct.remark = "price touches on the lowest price";
+  maxPriceProduct.remark = "price touches on the highest price";
+
+
+   let productList = [];
+   productList.push(minPriceProduct);
+   productList.push(maxPriceProduct);
+
+
+   return productList;
+
+}
+
+
+let result = minMaxPrice(products);
+
+console.log(result);
+
+
+// function to reduce the price of all the product whose rating is less than 3.0
+
+function reducePrice(products)
+{
+
+  for(let i = 0; i < products.length; i++)
+  {
+    if(products[i].rating < 3.0)
+    {
+      products[i].price = products[i].price * 0.9;
+      products[i].remark = "Best Price";
+    }
+  }
+}
+
+
+//calling the function
+reducePrice(products);
+
+console.log(products);
+
+
+
+
+
