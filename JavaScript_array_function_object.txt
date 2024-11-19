@@ -1155,7 +1155,7 @@ length property:
 console.log("Chitkara".length);	//8
 console.log("Masai".length);	//5
 console.log("".length);		//0
-console.log(' '.length);	//1
+console.log(" ".length);	//1
 
 
 

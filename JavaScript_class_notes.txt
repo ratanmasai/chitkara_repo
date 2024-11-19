@@ -3925,6 +3925,12 @@ output:
 
 
 
+
+
+
+
+
+
 Note: As we can use nesed if-else, similarly we can use nested loops..
 
 example1: for inside for
