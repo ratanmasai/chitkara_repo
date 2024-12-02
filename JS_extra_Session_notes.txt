@@ -1,0 +1,378 @@
+Scope in JavaScript
+====================
+
+
+--Scope in JavaScript determines the accessibility or visibility of variables, functions, and objects. JavaScript has different types of scope that control where and how variables are accessible.
+
+
+Types of Scope:
+----------------
+
+
+1. Global Scope
+2. Function Scope
+3. Block Scope
+4. Lexical Scope
+
+
+Example: index.js
+
+// Global scope
+var t=10;
+
+
+function abc(){
+    // Function scope
+    var q=90;
+   
+    { //this block can be if-else, loop, switch case, etc. related
+        // block scope
+    }
+}
+
+
+{
+    // Block scope
+}
+
+
+Global Scope:
+-------------
+
+--Global Scope means that variables and functions declared outside of any function or block are available throughout the entire code.
+--Global variables are accessible anywhere in the code.
+--Global scope variables are declared outside of functions or blocks, at the top level.
+
+
+
+Example: index.js
+
+
+var globalVar = "I am global";
+
+function printGlobalVar() {
+    console.log(globalVar); // Accessible inside the function
+}
+
+printGlobalVar(); // Output: "I am global"
+console.log(globalVar); // Output: "I am global"
+
+
+Note: Declaring too many global variables can lead to unintended interactions, so it’s generally best to limit the number of global variables.
+
+
+
+
+Function Scope:
+----------------
+
+--Function Scope means that variables declared inside a function are only accessible within that function. var is function-scoped, so it is only available within the function where it is defined.
+
+--Variables declared with var, let, or const within a function are function-scoped.
+--They cannot be accessed outside the function.
+
+
+Example:
+
+
+function greet() {
+    var message = "Hello!";
+    console.log(message); // Output: Hello!
+}
+
+greet();
+console.log(message); // Error: message is not defined
+
+
+
+Example 2:
+
+
+// Global scope
+// var t=10;
+// let q=15;
+// const w=90;
+
+
+function abc(){
+    var t=10;
+    let q=15;
+    const w=90;
+    console.log(q,t,w)
+}
+abc();
+
+
+console.log(q,t,w) // Error: not defined
+
+
+
+Block Scope:
+------------
+
+
+--Block Scope means that variables declared inside a block { ... } (e.g., within if-else, for, while, switch, etc.) are only accessible within that block. let and const are block-scoped, but var is not.
+
+--Variables declared with let and const are block-scoped, meaning they’re restricted to the block in which they are defined.
+
+--Variables declared with var ignore block scope and are function-scoped or global.
+
+
+
+if (true) {
+    let blockLet = "I'm block scoped!";
+    const blockConst = "I'm also block scoped!";
+    console.log(blockLet); // Output: I'm block scoped!
+    console.log(blockConst); // Output: I'm also block scoped!
+}
+
+console.log(blockLet); // Error: blockLet is not defined
+console.log(blockConst); // Error: blockConst is not defined
+
+
+
+Example with var in Block Scope:
+
+if (true) {
+    var blockVar = "I'm function scoped, not block scoped!";
+}
+
+console.log(blockVar); // Output: I'm function scoped, not block scoped!
+
+
+
+
+
+Lexical Scope:
+---------------
+
+
+
+--Lexical Scope (also known as Static Scope) refers to the fact that the scope of variables is determined by their location within the source code (i.e., where it is defined in relation to other blocks of code).
+
+--In simple terms, a variable's scope is determined by its location in the source code and the surrounding functions or blocks of code.
+
+
+--Inner functions can access variables from their outer functions due to lexical scoping. 
+
+-- The Lexical scope concept is crucial for closures in JavaScript.
+
+
+
+function outerFunction() {
+
+    let outerVariable = "I am from outer scope";
+
+    function innerFunction() {
+        console.log(outerVariable); // Output: I am from outer scope
+    }
+
+    innerFunction();
+}
+
+
+outerFunction();
+
+
+Example with Multiple Levels of Lexical Scope:
+
+function firstLevel() {
+    let levelOne = "Level 1";
+
+    function secondLevel() {
+        let levelTwo = "Level 2";
+
+        function thirdLevel() {
+            console.log(levelOne); // Output: Level 1
+            console.log(levelTwo); // Output: Level 2
+        }
+
+        thirdLevel();
+    }
+
+    secondLevel();
+}
+
+
+firstLevel();
+
+
+
+
+
+Closures and Lexical Scope:
+----------------------------
+
+
+--A closure is a function that "remembers" and can access variables from the outer function’s scope even after the outer function has finished executing. This is a powerful feature of JavaScript and is closely related to lexical scoping.
+
+Closures are a fundamental concept in JavaScript that take advantage of lexical scoping. A closure allows a function to retain access to variables from its lexical environment, even if the function is called outside of that environment.
+
+
+
+Example: index.js 
+
+
+
+function makeCounter() {
+    let count = 0;
+
+    return function() {
+        count += 1;
+        console.log(count);
+    };
+}
+
+const counter = makeCounter();
+counter(); // Output: 1
+counter(); // Output: 2
+
+Explanation: makeCounter returns a function that has access to count even after makeCounter has finished executing, thanks to closures and lexical scope.
+
+
+
+
+Key Points About Closures:
+--------------------------
+
+
+1. Encapsulation of Variables: Closures help in keeping certain data private. Variables defined in an outer function are not directly accessible from the outside, but a closure allows the inner function to access them.
+
+2. Inner Function Accesses Outer Variables: The inner function can access variables from the outer function, even after the outer function has finished executing.
+
+3. Preserves the Lexical Scope: Closures "remember" the environment in which they were created. This means they have access to variables from the scope in which they were defined, not where they are executed.
+
+4. Useful in Asynchronous Programming: Closures are commonly used with asynchronous functions (like setTimeout, fetch, or event listeners) where inner functions maintain access to outer variables even after the outer function has completed.
+
+
+
+
+Example: Closures and Private Data
+
+
+One of the most common uses of closures is to simulate private variables (data encapsulation). By using closures, you can hide data from the global scope and only expose it through specific functions.
+
+
+function counter() {
+    let count = 0;
+    
+    return {  //returning an object
+        increment: function() {
+            count++;
+            console.log(count);
+        },
+        decrement: function() {
+            count--;
+            console.log(count);
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+}
+
+let myCounterObj = counter();
+myCounterObj.increment(); // Outputs: 1
+myCounterObj.increment(); // Outputs: 2
+console.log(myCounterObj.getCount()); // Outputs: 2
+myCounterObj.decrement(); // Outputs: 1
+
+
+
+Hoisting in JavaScript:
+
+
+--Hoisting is a JavaScript mechanism that moves variable and function declarations to the top of their scope before code execution. This allows functions and variables to be used before they are declared in the code.
+
+
+1. What Gets Hoisted ?
+
+--Declarations are hoisted, not initializations (i.e., assignments).
+--JavaScript only hoists function declarations and variable declarations (var, let, const).
+
+2. How Hoisting Works with Different Variable Types:
+
+--var Variables: var declarations are hoisted to the top of their scope (function or global scope) and initialized with undefined.
+
+--let and const Variables: let and const are hoisted but are placed in a Temporal Dead Zone (TDZ), where they cannot be accessed until the actual line of code where they are declared. Trying to use them before their declaration results in a ReferenceError.
+
+
+3. Hoisting with Functions:
+
+--Function Declarations are fully hoisted, meaning you can call a function before it is declared in the code.
+--Function Expressions (where a function is assigned to a variable) follow the same hoisting rules as variables. Only the variable itself is hoisted, not the function assignment.
+
+
+4. Why Hoisting in JavaScript:
+
+--To use the function even before its declaration.
+
+--var hoisting is just a byproduct of the hoisting concept.
+
+
+
+Example:
+
+sayHello(); // Works fine, Output: Hello!
+
+
+function sayHello() {
+    console.log("Hello!");
+}
+sayHello(); // Error: sayHello is not a function
+
+
+const sayHello = function() {
+    console.log("Hello!");
+};
+
+
+
+
+
+Variable Hoisting with var:
+---------------------------
+
+console.log(greeting); // Output: undefined (hoisted but uninitialized)
+var greeting = "Hello, world!";
+console.log(greeting); // Output: Hello, world!
+
+
+Variable Hoisting with let and const:
+--------------------------------------
+console.log(age); // ReferenceError: Cannot access 'age' before initialization
+let age = 25;
+console.log(age); // Output: 25
+
+
+
+Example1 :
+
+
+for(var i=1;i<=5;i++){
+	console.log("Hello",i);
+}
+
+console.log("i value is",i);
+
+
+Example2:
+
+for(let i=1;i<=5;i++){
+	console.log("Hello",i);
+}
+
+console.log("i value is",i); //Error
+
+
+
+
+
+
+
+
+
+
+
+
+
