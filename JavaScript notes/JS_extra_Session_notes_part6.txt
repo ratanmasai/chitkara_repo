@@ -1,3 +1,24 @@
+1. var related variable can be redeclared, where as let and const related variable can not be redeclared 
+
+2. var is a global or function scoped variable where as let and const is the block scoped variable.
+function scoped: --if we declare any variable using var keyword inside a function, that variable will act as a local variable of that function. i.e. we can not access that variable outside of that function.
+
+Note: var related variable does not act as a block scoped variable. for this we need to make use of let or const
+
+In summery: var related variable will be either global scoped or function scoped variable, but it does not support block scope.
+
+Example:
+
+{ //it is an anonymous block
+	var z = 200;
+	console.log("z value is",z);
+}
+
+console.log("z value is outside",z);
+
+
+
+
 Scope in JavaScript
 ====================
 
