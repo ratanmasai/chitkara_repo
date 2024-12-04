@@ -1,20 +1,12 @@
-1. var related variable can be redeclared, where as let and const related variable can not be redeclared 
+1. once a function execution is completed all the local variables defined or created inside that function will be destroyed automatically.
 
-2. var is a global or function scoped variable where as let and const is the block scoped variable.
-function scoped: --if we declare any variable using var keyword inside a function, that variable will act as a local variable of that function. i.e. we can not access that variable outside of that function.
+2. variables of the outer function will be available to the inner function due to the lexical scoping.
 
-Note: var related variable does not act as a block scoped variable. for this we need to make use of let or const
+3. a function can return any other function also. i.e HOF
 
-In summery: var related variable will be either global scoped or function scoped variable, but it does not support block scope.
 
-Example:
 
-{ //it is an anonymous block
-	var z = 200;
-	console.log("z value is",z);
-}
 
-console.log("z value is outside",z);
 
 
 
@@ -300,6 +292,9 @@ myCounterObj.decrement(); // Outputs: 1
 
 
 
+
+
+
 Hoisting in JavaScript:
 
 
@@ -392,8 +387,291 @@ console.log("i value is",i); //Error
 
 
 
+Execution Context:
+==================
 
 
+--JavaScript execution context is a fundamental concept that helps in understanding how JavaScript code is executed. 
+--It refers to the environment in which JavaScript code is executed, including the variables, functions, and scope chains available during the execution of a piece of code.
+
+--All code in JavaScript is executed inside an Execution Context.
+
+
+Types of Execution Context:
+--------------------------
+
+
+1. Global Execution Context:
+
+--It is the default execution context in JavaScript.
+--It's created when the script is executed and remains until the script finishes.
+--Contains global variables and functions accessible throughout the script.
+--Any code outside a function is in the Global scope.
+
+
+2. Function Execution Context:
+
+--Created every time a function is invoked.
+--Each function call creates a new execution context, forming a stack (the "call stack").
+--each function execution context is pushed onto the execution stack (also known as the call stack). When the function finishes, its execution context is popped off the stack.
+--Contains local variables, parameters, and a reference to its outer lexical environment (scope chain).
+
+
+
+Components of Execution Context:
+---------------------------------
+
+1. Variable Environment:
+
+--It contains the variables defined within the context, including function arguments and local variables.
+--It's where variable declarations are stored, 
+  --var related variables are hoisted to the top and initialized with the value undefined.
+  --let and const related variables are hoisted but not initialized, and they exist in the temporal dead zone (TDZ) until their declaration is encountered in the execution phase.
+
+
+2. Lexical Environment:
+
+--Defines the accessibility of variables based on their location within nested scopes.
+--It maintains a reference to the outer lexical environment, forming the scope chain, which determines variable visibility.
+
+
+
+
+Execution Context Lifecycle:
+-----------------------------
+
+--JavaScript is a two-pass system. 
+
+
+1. Creation Phase:
+
+--In this phase The syntax/grammar of the code is parsed line by line and validated.
+--Hoisting: Variable and function declarations are hoisted to the top of their respective environments.
+ 
+2. Execution Phase:
+	
+--Code real execution begins line by line.
+--Variables are assigned with their values.
+--Function expressions and arrow functions are assigned to variables.
+--Execution of the function body.
+
+
+
+Execution Context Stack (Call Stack):
+-------------------------------------
+
+--JavaScript uses a call stack to manage execution contexts. When a function is invoked, a new execution context is created and pushed onto the stack. 
+--When the function execution completes, its execution context is popped off the stack. 
+--The call stack ensures that functions are executed in the correct order.
+
+
+
+
+
+Example:
+
+
+        console.log(age);
+
+
+        var age = 20;
+
+
+        let x= 50;
+
+
+        fun1();
+
+
+        function fun1() {
+
+            console.log(y);
+           
+            var y =100; // variable created inside the function scope
+            let z= 20; // variable created inside the function scope
+
+
+            console.log(y);
+            console.log(z);
+            console.log(x); //accessing lexical environment variable
+            console.log(age);//accessing lexical environment variable
+       
+        }
+
+
+
+
+//In the creation phase the variable and the functions will be hoisted on the top,
+//var related variable will be initialized with undefined where as let related //variable will not be initialized with any value.
+
+
+
+
+        // ----creation phase--hoisting--------
+
+
+
+
+        // var age= undefined;
+        // let x;
+        // function fun1(){function body will be loaded into the memory}
+       
+        //----execution phase---
+       
+        //console.log(age); //undefined
+        // age = 20; //age will be initialized with its real value
+        // x= 50; // x will be initialized with its real value
+        //fun1(); // here fun1 will be called and control moves inside fun1 execution context.       
+
+
+
+
+
+Example2: 
+
+
+
+        // Global execution context
+        var globalVar = 'Global'; // Variable in global scope
+
+
+        function outerFunction() {
+            // Function execution context
+            var outerVar = 'Outer'; // Variable in outerFunction scope
+
+
+            function innerFunction() {
+                // Function execution context inside outerFunction
+                var innerVar = 'Inner'; // Variable in innerFunction scope
+                console.log(globalVar); // Accessible (global scope)
+                console.log(outerVar); // Accessible (outerFunction scope)
+                console.log(innerVar); // Accessible (innerFunction scope)
+            }
+
+
+            innerFunction(); // Invoking innerFunction
+        }
+
+
+        outerFunction(); // Invoking outerFunction
+
+
+
+
+
+
+
+window object:
+==============
+
+--The window object in JavaScript is a global object representing the browser window or tab where the JavaScript code is running. 
+
+--It serves as the top-level scope for all JavaScript code within a web page. Here are some key points about the window object:
+
+
+1. Global Scope: All global variables, functions, and objects are properties of the window object. For example, window.document refers to the DOM document object, and window.alert() invokes the browser's alert dialog.
+
+2. Properties: The window object has numerous properties representing various aspects of the browser environment. Some common properties include window.location, window.document, and window.history.
+
+
+3. Methods: It also provides methods for interacting with the browser environment. For example, window.alert(), window.confirm(), and window.prompt() are used for displaying dialog boxes.
+
+
+4. Event Handling: The window object handles global events such as page loading (load event), resizing (resize event), and closing (unload event). Event listeners can be attached to the window object to handle these events.
+
+a. resize: This event triggers whenever the browser window is resized.
+b. scroll: The scroll event triggers when the user scrolls the page.
+c. load: The load event fires when the window and all its content (including images, styles, and scripts) have finished loading.
+d. beforeunload: The beforeunload event is fired when the window is about to be unloaded, which happens when the user is navigating away or closing the window. You can use this event to prompt the user with a confirmation message.
+
+e. focus: These events are triggered when the window gains focus.
+f. blur: These events are triggered when the window loses focus.
+
+
+Example:
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Welcome to Chitkara</h1>
+
+
+    <script>
+
+        window.addEventListener("resize", function(){
+            alert("hello");
+        });
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+5. Global Scope Pollution: Since all global variables are properties of the window object, care should be taken to avoid unintentional conflicts or pollution of the global namespace.
+
+
+Note: global variable created using var keyword, normal function declaration will be attached to the window object, which may cause the Global Scope pollution. Where as variables created using let or const keyword will not attached with the window object. And it does not pollute the Global Scope. 
+
+
+Example:
+
+
+  <script>
+
+
+        var firstName = "Rahul";
+        var lastName = "Kumar";
+        let age = 20;
+
+
+
+        console.dir(window);
+
+
+        console.log(window.firstName); //Rahul
+        console.log(window.age); //undefined
+
+
+    </script>
+
+
+
+
+Note: In the browser environment the global object is "window" object, where as in Node environment the global object is "global".
+
+example: 
+
+console.log(global);
+
+--The "global" object in Node environment represents the global scope, but instead of being tied to a window (as in browsers), it manages Node-specific global objects, functions, and variables.
+
+--It doesn't have access to browser-specific objects like document or window.
+
+--In the browser, global variables declared using var (and some global objects like alert(), document, etc.) automatically become properties of the window object.
+Example: A variable declared with var is automatically a property of window 
+
+--In Node.js, global variables declared with var are not automatically added as properties of the global object.
+--You must explicitly assign global variables to global if you want them to be accessible as global properties.
+
+Example:
+
+var greeting = "Hello!";
+console.log(global.greeting); // Outputs: undefined
+
+global.greeting = "Hello!";
+console.log(global.greeting); // Outputs: "Hello!"
 
 
 
