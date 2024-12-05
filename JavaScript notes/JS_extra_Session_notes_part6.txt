@@ -675,3 +675,230 @@ console.log(global.greeting); // Outputs: "Hello!"
 
 
 
+
+
+Object creation with Factory function:
+======================================
+
+
+Factory function:
+-----------------
+
+--A factory function is a function that returns an object. 
+--It allows for the creation of multiple instances of objects with the same structure, without the need for a constructor function or class. 
+--The main advantage of a factory function is that it provides more flexibility than using constructors or classes.
+
+
+Characteristics:
+---------------
+--A factory function does not use the new keyword.
+--It can return different objects each time it’s called.
+--It allows for private properties using closures.
+
+
+Example1:
+
+
+function createStudent(roll, name, marks){
+
+let obj={};
+
+obj.roll= roll;
+obj.name= name;
+obj.marks= marks;
+
+return obj;
+
+}
+
+
+--creating student object based on the above factory function.
+
+
+let s1 = createStudent(10,"Rahul",800);
+
+console.log(s1);
+
+
+
+Factory function to create an object with a method/function:
+------------------------------------------------------------
+
+
+
+function createStudent(roll, name, marks){
+
+    let obj={};
+    
+    obj.roll= roll;
+    obj.name= name;
+    obj.marks= marks;
+
+    obj.introduce= function(){
+        console.log("Inside the introduce function");
+        console.log("Roll is", this.roll);
+        console.log("Name is", this.name);
+        console.log("Marks is", this.marks);
+    }
+    
+    return obj;
+    
+    }
+    
+
+    let s1 = createStudent(10,"Rahul",800);
+
+    s1.introduce();
+
+
+
+Factory function with closures(making object property as private):
+------------------------------------------------------------------
+
+function createStudent(roll, name, marks) {
+    // Private variables
+    let privateRoll = roll;
+    let privateName = name;
+    let privateMarks = marks;
+
+    let obj = {};
+
+    obj.introduce = function () {
+
+        console.log("Inside the introduce function");
+        console.log("Roll is", privateRoll); // Accessing the private variable
+        console.log("Name is", privateName); // Accessing the private variable
+        console.log("Marks is", privateMarks); // Accessing the private variable
+
+    }
+
+    // Public method to update marks
+    obj.setMarks = function (newMarks) {
+        privateMarks = newMarks;
+    }
+    // Public method to get the student's marks
+    obj.getMarks = function () {
+        return privateMarks;
+    }
+    // Public method to get student's name
+    obj.getName = function () {
+        return privateName;
+    }
+
+
+    return obj;
+
+}
+
+// Creating a new student
+let s1 = createStudent(10, "Rahul", 800);
+
+// Using the public method to introduce the student
+s1.introduce(); // Output: Roll is 10, Name is Rahul, Marks is 800
+
+// Trying to access private properties directly (won't work)
+// console.log(s1.privateRoll); // undefined
+// console.log(s1.privateName); // undefined
+// console.log(s1.privateMarks); // undefined
+
+// Using public methods to update and get marks
+s1.setMarks(850);
+console.log("Updated Marks:", s1.getMarks()); // Output: Updated Marks: 850
+
+
+
+
+Object Creation with Constructor function:
+===========================================
+
+Constructor Function:
+---------------------
+
+--A constructor function is used to create objects in JavaScript similar to the factory function, but here we need to make use of "new" keyword.
+
+--Here we need not create any object inside the function explicitly and need not return any object from this constructor function. 
+
+--Constructor function name typically starts with an uppercase letter to follow the convention of capitalizing constructor names.
+
+
+Example:
+
+
+
+function Student(roll, name, marks){
+
+    this.roll= roll;
+    this.name= name;
+    this.marks= marks;
+
+    this.introduce= function(){
+        console.log("Inside the introduce function");
+        console.log("Roll is", this.roll);
+        console.log("Name is", this.name);
+        console.log("Marks is", this.marks);
+    }
+    
+    }
+    
+
+    let s1 = new Student(10,"Rahul",800);
+
+    console.log(s1);
+    s1.introduce();
+
+
+
+
+
+Object creation with class:
+============================
+
+--A class is a template for creating objects. 
+--Classes were introduced in ECMAScript 6 (ES6) and provide a syntactic sugar over constructor functions. 
+--Classes can have constructors and methods defined within them.
+
+Example:
+
+
+class Student{
+
+    constructor(roll, name, marks){
+        this.roll=roll;
+        this.name=name;
+        this.marks= marks;
+    }
+
+
+    introduce(){
+        console.log("Inside the introduce function");
+        console.log("Roll is", this.roll);
+        console.log("Name is", this.name);
+        console.log("Marks is", this.marks);
+    }
+
+
+
+}
+
+
+let s1 = new Student(10,"Raj",500);
+
+console.log(s1);
+s1.introduce();
+
+
+let s2= new Student(20,"Simran",600);
+
+
+console.log(s2);
+s2.introduce();
+
+
+
+
+
+
+
+
+
+
