@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block title_block %}Profile Page{% endblock %}
+
+
+
+
+{% block main_block %}
+<h2>Profile of {{ current_user.name }}</h2>
+<hr>
+<div class="container">
+    <p><strong>Name:</strong> {{ current_user.name }}</p>
+    <p><strong>Email:</strong> {{ current_user.email }}</p>
+    <p><strong>Mobile:</strong> {{ current_user.mobile }}</p>
+    <p><strong>Role:</strong> {{ current_user.role }}</p>
+</div>
+<hr>
+<a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+{% endblock %}

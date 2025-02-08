@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title_block %}Registeration Page{% endblock %}
+
+
+{% block main_block %}
+
+
+<div class="container">
+    <h2>Register</h2>
+    <form action="{{url_for('register')}}" method="POST">
+
+
+        <div class="mb-3">
+            <label for="name">Enter Full Name:</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="email">Enter Username:</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm_password" id="confirm_password" class="form-control"
+                placeholder="Confirm Password" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="mobile">Enter Mobile Number:</label>
+            <input type="text" name="mobile" id="mobile" class="form-control" placeholder="Mobile Number" required><br>
+        </div>
+
+
+
+        <input type="submit" class="btn btn-primary" value="Register">
+    </form>
+
+
+    <p>Already registered? <a href="{{ url_for('login') }}">Login here</a></p>
+
+
+</div>
+{% endblock %}
