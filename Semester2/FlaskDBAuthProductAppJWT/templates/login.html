@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block title_block %}Login Page{% endblock %}
+
+
+
+
+{% block main_block %}
+<h2>Login</h2>
+<div class="container">
+    <form action="{{url_for('login')}}" method="POST">
+
+
+        <div class="mb-3">
+            <label for="username">Enter Username:</label>
+            <input type="email" name="email" id="username" class="form-control" placeholder="Email" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="role">Select Role:</label>
+            <select name="role" id="role" class="form-control" required>
+                <option value="">Choose Role</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <input type="submit" class="btn btn-primary" value="Login">
+        </div>
+    </form>
+    <p>New User? <a href="{{ url_for('register') }}">Register first</a></p>
+</div>
+
+
+{% endblock %}

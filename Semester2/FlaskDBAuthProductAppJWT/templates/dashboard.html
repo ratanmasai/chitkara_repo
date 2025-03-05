@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block title_block %}Dashboard{% endblock %}
+
+
+
+
+{% block main_block %}
+<div class="text-center">
+    <h2>Welcome, {{ current_user.name }}!</h2>
+    <p>Your role: <strong>{{ current_user.role }}</strong></p>
+    <hr>
+    <a href="{{url_for('product')}}" class="btn btn-info">Add a Product</a>
+    <a href="{{ url_for('profile') }}" class="btn btn-primary">View Profile</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+</div>
+{% endblock %}
